@@ -91,40 +91,40 @@ export default function SuccessConfirmation() {
         <h2 className="text-2xl font-bold text-primary mb-2">
           تم تأكيد الحجز بنجاح!
         </h2>
-        <p className="text-gray-600">
+        <p className="text-black">
           لقد تم حجز موعدك بنجاح. سنرسل لك تذكيراً قبل الموعد.
         </p>
       </div>
 
       <div className="bg-gray-50 p-6 rounded-lg mb-6">
         <div className="text-center mb-4">
-          <p className="text-sm text-gray-500 mb-1">رمز الحجز</p>
+          <p className="text-sm text-black font-medium mb-1">رمز الحجز</p>
           <p className="text-2xl font-mono font-bold tracking-wider text-primary">{bookingCode}</p>
         </div>
 
         <div className="space-y-3">
           <div className="flex justify-between">
-            <span className="text-gray-500">الاسم:</span>
-            <span className="font-medium">{user?.name}</span>
+            <span className="text-black">الاسم:</span>
+            <span className="font-medium text-black">{user?.name}</span>
           </div>
           <div className="flex justify-between">
-            <span className="text-gray-500">التاريخ:</span>
-            <span className="font-medium">{formatDate(booking.date)}</span>
+            <span className="text-black">التاريخ:</span>
+            <span className="font-medium text-black">{formatDate(booking.date)}</span>
           </div>
           <div className="flex justify-between">
-            <span className="text-gray-500">الوقت:</span>
-            <span className="font-medium">{booking.time}</span>
+            <span className="text-black">الوقت:</span>
+            <span className="font-medium text-black">{booking.time}</span>
           </div>
           <div className="flex justify-between">
-            <span className="text-gray-500">وصف المشكلة:</span>
-            <span className="font-medium">{booking.description}</span>
+            <span className="text-black">وصف المشكلة:</span>
+            <span className="font-medium text-black">{booking.description}</span>
           </div>
         </div>
       </div>
 
       <div className="bg-blue-50 p-4 rounded-lg mb-6">
         <h3 className="font-bold text-primary mb-2">تعليمات هامة:</h3>
-        <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
+        <ul className="list-disc list-inside space-y-1 text-black text-sm">
           <li>يرجى الحضور قبل الموعد بـ 15 دقيقة</li>
           <li>احضر معك رخصة القيادة واستمارة السيارة</li>
           <li>تأكد من إحضار رمز الحجز للتحقق من موعدك</li>
