@@ -5,16 +5,23 @@ import BookingContainer from '@/components/booking/BookingContainer';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useAuth } from '@/context/AuthContext';
+import { useRouter } from 'next/navigation';
 
 export default function BookingPage() {
   const [mounted, setMounted] = useState(false);
   const { user, logout, isAuthenticated } = useAuth();
+  const router = useRouter();
   
   // Set page title and handle mounting
   useEffect(() => {
     document.title = 'حجز موعد فحص - MotorLab';
     setMounted(true);
   }, []);
+
+  const handleLogout = () => {
+    logout();
+    router.push('/login');
+  };
 
   return (
     <main className="min-h-screen bg-white">
@@ -46,7 +53,7 @@ export default function BookingPage() {
               {/* Logout Button - Only shown when authenticated */}
               {mounted && isAuthenticated && (
                 <button 
-                  onClick={logout}
+                  onClick={handleLogout}
                   className="text-gray-600 hover:text-red-600 font-medium transition-colors flex items-center gap-1 text-sm"
                 >
                   <span>تسجيل الخروج</span>

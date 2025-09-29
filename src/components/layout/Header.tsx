@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
 
 export default function Header() {
@@ -11,6 +11,7 @@ export default function Header() {
   const [mounted, setMounted] = useState(false);
   const { user, isAuthenticated, logout } = useAuth();
   const pathname = usePathname();
+  const router = useRouter();
 
   
   // Only show auth UI after mounting to prevent hydration mismatch
@@ -20,6 +21,11 @@ export default function Header() {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleLogout = () => {
+    logout();
+    router.push('/login');
   };
 
   return (
@@ -110,7 +116,7 @@ export default function Header() {
             {/* Logout Button - Only shown when authenticated */}
             {mounted && isAuthenticated && (
               <button 
-                onClick={logout}
+                onClick={handleLogout}
                 className="text-red-400 hover:text-red-300 text-sm font-medium transition-colors flex items-center"
               >
                 <span className="ml-1">تسجيل الخروج</span>
@@ -216,7 +222,7 @@ export default function Header() {
               <>
                 <button 
                   onClick={() => {
-                    logout();
+                    handleLogout();
                     toggleMenu();
                   }}
                   className="text-red-400 hover:text-red-300 font-medium transition-colors flex items-center justify-end"
