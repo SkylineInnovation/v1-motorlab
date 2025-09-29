@@ -133,18 +133,18 @@ export default function Hero() {
             <AnimatedButton 
               href="/booking" 
               variant="primary" 
-              size="lg"
-              className="animate-[slideInBlur_0.8s_ease-out_1.2s_forwards]"
+              size="md"
+              className="animate-[slideInBlur_0.8s_ease-out_1.2s_forwards] h-10"
             >
               احجز موعد الآن
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 5l7 7-7 7" />
               </svg>
             </AnimatedButton>
             
             <Link 
               href="#services" 
-              className="group relative overflow-hidden leading-none transition-all duration-300 text-white glass-dark border-white/20 border rounded-full pt-4 pr-6 pb-4 pl-6 shadow-sm backdrop-blur hover:bg-white/10"
+              className="group relative overflow-hidden leading-none transition-all duration-300 text-white glass-dark border-white/20 border rounded-full pt-2.5 pr-5 pb-2.5 pl-5 shadow-sm backdrop-blur hover:bg-white/10 h-10 flex items-center"
             >
               <span className="absolute inset-0 -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out bg-white/5"></span>
               <span className="relative z-10 inline-flex items-center gap-2">
