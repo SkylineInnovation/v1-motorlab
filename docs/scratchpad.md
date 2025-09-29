@@ -68,6 +68,7 @@ src/
   - Success page with gradient backgrounds and icon-based instructions
   - Consistent button styling: primary for main actions, secondary for CTAs
   - All components use shadow-sm for subtle depth without heavy shadows
+  - **Date Formatting**: Changed from 'ar-SA' to 'ar-EG' with explicit 'gregory' calendar to display Gregorian dates instead of Hijri dates
 
 ## To-Do
 - [ ] Implement remaining pages (Services, Booking, About, Blog, Contact)

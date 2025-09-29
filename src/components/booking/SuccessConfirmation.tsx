@@ -49,16 +49,17 @@ export default function SuccessConfirmation() {
     }
   }, [lastCreatedBookingId, getBookingById]);
 
-  // Format date to Arabic format
+  // Format date to Arabic format (Gregorian calendar)
   const formatDate = (dateString: string) => {
     if (!dateString) return '';
     
     const date = new Date(dateString);
-    return date.toLocaleDateString('ar-SA', {
+    return date.toLocaleDateString('ar-EG', {
       weekday: 'long',
       year: 'numeric',
       month: 'long',
       day: 'numeric',
+      calendar: 'gregory'
     });
   };
 

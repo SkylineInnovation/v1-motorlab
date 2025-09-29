@@ -117,9 +117,13 @@ export default function BookingCalendar() {
     setCurrentStep('description');
   };
 
-  // Format month name in Arabic
+  // Format month name in Arabic (Gregorian calendar)
   const formatMonthName = (date: Date) => {
-    return date.toLocaleDateString('ar-SA', { month: 'long', year: 'numeric' });
+    return date.toLocaleDateString('ar-EG', { 
+      month: 'long', 
+      year: 'numeric',
+      calendar: 'gregory'
+    });
   };
 
   // Get days of week in Arabic
