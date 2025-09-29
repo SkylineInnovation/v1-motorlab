@@ -29,8 +29,14 @@ const slides = [
 ];
 
 export default function Hero() {
+  const [mounted, setMounted] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+  
+  // This effect runs once after component mounts to prevent hydration mismatch
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Auto-advance slides
   useEffect(() => {
@@ -52,6 +58,17 @@ export default function Hero() {
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
   };
+
+  // Only render the full component after client-side mount to avoid hydration issues
+  if (!mounted) {
+    return (
+      <div className="relative h-[400px] sm:h-[500px] md:h-[600px] lg:h-[650px] overflow-hidden bg-gray-200">
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-12 h-12 rounded-full border-4 border-primary border-t-transparent animate-spin"></div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="relative h-[400px] sm:h-[500px] md:h-[600px] lg:h-[650px] overflow-hidden">
