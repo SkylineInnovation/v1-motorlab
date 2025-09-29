@@ -3,12 +3,17 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useAuth } from "@/context/AuthContext";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const { user, logout, isAuthenticated } = useAuth();
+  // Mock auth state for development
+  const user = { name: "User" };
+  const isAuthenticated = false;
+  const logout = () => {};
+  const pathname = usePathname();
+
   
   // Only show auth UI after mounting to prevent hydration mismatch
   useEffect(() => {
@@ -23,10 +28,10 @@ export default function Header() {
     <header className="fixed top-3 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-6xl px-6">
       <div className="glass-dark rounded-full shadow-2xl backdrop-blur-xl border border-white/10">
         <div className="flex pt-2 pr-6 pb-2 pl-6 items-center justify-between">
-        {/* Logo */}
+        {/* Logo - White version only on landing page */}
         <Link href="/" className="flex items-center">
           <Image
-            src="/images/logo.svg"
+            src={pathname === "/" ? "/images/logo-white.svg" : "/images/logo.svg"}
             alt="MotorLab Logo"
             width={140}
             height={42}
