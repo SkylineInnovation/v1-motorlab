@@ -46,10 +46,15 @@ export default function BookingCalendar() {
     }
     
     // Current month days
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const todayTime = today.getTime();
+    
     for (let i = 1; i <= lastDay.getDate(); i++) {
       const date = new Date(year, month, i);
+      const dateTime = new Date(year, month, i, 0, 0, 0, 0).getTime();
       const isToday = isSameDay(date, new Date());
-      const isPast = date < new Date(new Date().setHours(0, 0, 0, 0));
+      const isPast = dateTime < todayTime;
       
       days.push({
         date,
@@ -62,10 +67,14 @@ export default function BookingCalendar() {
     // Next month days
     const remainingDays = totalDays - days.length;
     for (let i = 1; i <= remainingDays; i++) {
+      const date = new Date(year, month + 1, i);
+      const dateTime = new Date(year, month + 1, i, 0, 0, 0, 0).getTime();
+      const isPast = dateTime < todayTime;
+      
       days.push({
-        date: new Date(year, month + 1, i),
+        date,
         isCurrentMonth: false,
-        isSelectable: false,
+        isSelectable: !isPast,
       });
     }
     
