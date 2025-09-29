@@ -27,14 +27,14 @@ export default function Header() {
   return (
     <header className="fixed top-3 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-6xl px-6">
       <div className="glass-dark rounded-full shadow-2xl backdrop-blur-xl border border-white/10">
-        <div className="flex pt-2 pr-6 pb-2 pl-6 items-center justify-between">
+        <div className="flex pt-1 pr-6 pb-1 pl-6 items-center justify-between">
         {/* Logo - White version only on landing page */}
         <Link href="/" className="flex items-center">
           <Image
             src={pathname === "/" ? "/images/logo-white.svg" : "/images/logo.svg"}
             alt="MotorLab Logo"
-            width={140}
-            height={42}
+            width={120}
+            height={32}
             priority
           />
         </Link>
@@ -70,7 +70,7 @@ export default function Header() {
           </button>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-4">
+          <nav className="hidden md:flex items-center gap-6">
             <Link
               href="/"
               className="text-white/90 hover:text-white text-sm font-medium transition-colors"
@@ -107,9 +107,7 @@ export default function Header() {
             >
               تواصل معنا
             </Link>
-            <button className="text-white/80 hover:text-white text-sm font-medium transition-colors">
-              العربية | EN
-            </button>
+         
           
             {/* Logout Button - Only shown when authenticated */}
             {mounted && isAuthenticated && (
