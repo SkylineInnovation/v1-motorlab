@@ -73,16 +73,35 @@ export default function Hero() {
 
   return (
     <section className="relative overflow-hidden pt-24 min-h-screen">
-      {/* Background with blur effect */}
-      <div 
-        className="absolute top-0 w-full -z-10 h-full blur-3xl bg-cover bg-center opacity-30"
-        style={{
-          backgroundImage: `url(${slides[currentSlide].image})`
-        }}
-      />
+      {/* Background Slider with Images */}
+      <div className="absolute inset-0 z-0">
+        {slides.map((slide, index) => (
+          <div
+            key={slide.id}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              index === currentSlide ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <Image
+              src={slide.image}
+              alt={slide.title}
+              fill
+              sizes="100vw"
+              quality={90}
+              placeholder="blur"
+              blurDataURL={slide.blurDataUrl}
+              style={{ objectFit: "cover", objectPosition: "center" }}
+              priority={index === 0}
+              className="scale-105"
+            />
+            {/* Dark overlay for better text readability */}
+            <div className="absolute inset-0 bg-gradient-to-b from-gray-950/60 via-gray-950/50 to-gray-950/70" />
+          </div>
+        ))}
+      </div>
       
       {/* Main content */}
-      <div className="max-w-7xl lg:px-8 mx-auto px-6">
+      <div className="relative z-10 max-w-7xl lg:px-8 mx-auto px-6">
         <div className="sm:pt-16 text-center max-w-4xl mr-auto ml-auto pt-12 pb-48">
           {/* Badge */}
           <span className="inline-flex items-center gap-2 text-xs font-medium text-white/90 glass-dark border-white/20 border rounded-full mr-auto mb-6 ml-auto pt-2 pr-4 pb-2 pl-4">
