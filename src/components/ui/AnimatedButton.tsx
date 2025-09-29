@@ -34,11 +34,9 @@ export default function AnimatedButton({
 
   const variantClasses = {
     primary: `
-      bg-gradient-to-r from-blue-600 to-purple-600 
+      bg-gradient-to-r from-orange-500 to-orange-600 
       text-white shadow-lg hover:shadow-xl
-      before:absolute before:inset-0 before:bg-gradient-to-r 
-      before:from-blue-500 before:to-purple-500 before:opacity-0 
-      before:transition-opacity before:duration-300 hover:before:opacity-100
+      hover:from-orange-400 hover:to-orange-500
     `,
     secondary: `
       bg-secondary text-white shadow-lg hover:shadow-xl
@@ -54,21 +52,6 @@ export default function AnimatedButton({
 
   const ButtonContent = () => (
     <>
-      {/* Floating points animation */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(6)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute bottom-0 w-0.5 h-0.5 bg-white rounded-full opacity-0 animate-pulse"
-            style={{
-              left: `${15 + i * 15}%`,
-              animationDelay: `${i * 0.2}s`,
-              animationDuration: '2s'
-            }}
-          />
-        ))}
-      </div>
-      
       {/* Button content */}
       <span className="relative z-10 flex items-center gap-2">
         {children}
