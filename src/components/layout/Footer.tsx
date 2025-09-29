@@ -157,7 +157,7 @@ export default function Footer() {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="w-5 h-5 text-orange-500 mt-1 ml-2"
+                  className="w-5 h-5 text-secondary mt-1 ml-2"
                 >
                   <path
                     strokeLinecap="round"
@@ -181,7 +181,7 @@ export default function Footer() {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="w-5 h-5 text-orange-500 ml-2"
+                  className="w-5 h-5 text-secondary ml-2"
                 >
                   <path
                     strokeLinecap="round"
@@ -203,7 +203,7 @@ export default function Footer() {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="w-5 h-5 text-orange-500 ml-2"
+                  className="w-5 h-5 text-secondary ml-2"
                 >
                   <path
                     strokeLinecap="round"
@@ -225,7 +225,7 @@ export default function Footer() {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="w-5 h-5 text-orange-500 ml-2"
+                  className="w-5 h-5 text-secondary ml-2"
                 >
                   <path
                     strokeLinecap="round"
@@ -250,12 +250,12 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="البريد الإلكتروني"
-                className="px-4 py-2 bg-gray-800 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                className="px-4 py-2 bg-gray-800 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-secondary"
                 required
               />
               <button
                 type="submit"
-                className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md transition-colors"
+                className="bg-secondary hover:bg-opacity-90 text-white px-4 py-2 rounded-md transition-colors"
               >
                 اشترك الآن
               </button>

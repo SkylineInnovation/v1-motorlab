@@ -97,12 +97,12 @@ export default function Testimonials() {
                 className="bg-white p-6 rounded-lg shadow-md"
               >
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center text-orange-500 font-bold text-xl">
+                  <div className="w-12 h-12 bg-secondary bg-opacity-20 rounded-full flex items-center justify-center text-secondary font-bold text-xl">
                     {testimonial.name.charAt(0)}
                   </div>
                   <div className="ml-4">
                     <h3 className="font-bold">{testimonial.name}</h3>
-                    <div className="flex text-orange-400">
+                    <div className="flex text-secondary">
                       {[...Array(5)].map((_, i) => (
                         <svg
                           key={i}
@@ -204,7 +204,7 @@ export default function Testimonials() {
               onClick={() => setActiveIndex(index * 3)}
               className={`w-3 h-3 mx-1 rounded-full ${
                 Math.floor(activeIndex / 3) === index
-                  ? "bg-orange-500"
+                  ? "bg-secondary"
                   : "bg-gray-300"
               }`}
               aria-label={`Go to testimonial group ${index + 1}`}
