@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import BookingContainer from '@/components/booking/BookingContainer';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useAuth } from '@/context/AuthContext';
 
 export default function BookingPage() {
@@ -22,8 +23,14 @@ export default function BookingPage() {
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center">
-              <Link href="/" className="text-2xl font-bold text-primary">
-                MotorLab
+              <Link href="/" className="flex items-center">
+                <Image
+                  src="/images/logo.svg"
+                  alt="MotorLab Logo"
+                  width={160}
+                  height={48}
+                  priority
+                />
               </Link>
               {/* User greeting - Only shown when authenticated */}
               {mounted && isAuthenticated && (
