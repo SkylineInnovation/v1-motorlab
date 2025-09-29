@@ -3,16 +3,15 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { useAuth } from "@/context/AuthContext";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
-  // Mock auth state for development
-  const user = { name: "User" };
-  const isAuthenticated = false;
-  const logout = () => {};
+  const { user, isAuthenticated, logout } = useAuth();
   const pathname = usePathname();
+  const router = useRouter();
 
   
   // Only show auth UI after mounting to prevent hydration mismatch
@@ -22,6 +21,11 @@ export default function Header() {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleLogout = () => {
+    logout();
+    router.push('/login');
   };
 
   return (
@@ -112,7 +116,7 @@ export default function Header() {
             {/* Logout Button - Only shown when authenticated */}
             {mounted && isAuthenticated && (
               <button 
-                onClick={logout}
+                onClick={handleLogout}
                 className="text-red-400 hover:text-red-300 text-sm font-medium transition-colors flex items-center"
               >
                 <span className="ml-1">تسجيل الخروج</span>
@@ -123,7 +127,7 @@ export default function Header() {
             )}
           </nav>
 
-          {/* User greeting or Book Now Button */}
+          {/* User greeting or Auth Buttons */}
           <div className="hidden md:flex items-center gap-3">
             {mounted && isAuthenticated ? (
               <>
@@ -138,12 +142,20 @@ export default function Header() {
                 </Link>
               </>
             ) : (
-              <Link
-                href="/booking"
-                className="bg-secondary hover:bg-opacity-90 text-white px-3 py-1.5 rounded-full text-xs font-medium transition-colors"
-              >
-                احجز موعد الآن
-              </Link>
+              <>
+                <Link
+                  href="/login"
+                  className="text-white/90 hover:text-white text-sm font-medium transition-colors"
+                >
+                  تسجيل الدخول
+                </Link>
+                <Link
+                  href="/signup"
+                  className="bg-secondary hover:bg-opacity-90 text-white px-3 py-1.5 rounded-full text-xs font-medium transition-colors"
+                >
+                  إنشاء حساب
+                </Link>
+              </>
             )}
           </div>
         </div>
@@ -205,28 +217,47 @@ export default function Header() {
               العربية | EN
             </button>
             
-            {/* Logout Button for Mobile - Only shown when authenticated */}
-            {mounted && isAuthenticated && (
-              <button 
-                onClick={() => {
-                  logout();
-                  toggleMenu();
-                }}
-                className="text-red-400 hover:text-red-300 font-medium transition-colors flex items-center justify-end"
-              >
-                <span className="ml-1">تسجيل الخروج</span>
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-                </svg>
-              </button>
+            {/* Auth Buttons for Mobile */}
+            {mounted && isAuthenticated ? (
+              <>
+                <button 
+                  onClick={() => {
+                    handleLogout();
+                    toggleMenu();
+                  }}
+                  className="text-red-400 hover:text-red-300 font-medium transition-colors flex items-center justify-end"
+                >
+                  <span className="ml-1">تسجيل الخروج</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                  </svg>
+                </button>
+                <Link
+                  href="/booking"
+                  className="bg-secondary hover:bg-opacity-90 text-white px-6 py-2 rounded-full font-medium transition-colors text-center"
+                  onClick={toggleMenu}
+                >
+                  احجز موعد الآن
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link
+                  href="/login"
+                  className="text-white/90 hover:text-white font-medium transition-colors"
+                  onClick={toggleMenu}
+                >
+                  تسجيل الدخول
+                </Link>
+                <Link
+                  href="/signup"
+                  className="bg-secondary hover:bg-opacity-90 text-white px-6 py-2 rounded-full font-medium transition-colors text-center"
+                  onClick={toggleMenu}
+                >
+                  إنشاء حساب
+                </Link>
+              </>
             )}
-            <Link
-              href="/booking"
-              className="bg-secondary hover:bg-opacity-90 text-white px-6 py-2 rounded-full font-medium transition-colors text-center"
-              onClick={toggleMenu}
-            >
-              احجز موعد الآن
-            </Link>
           </div>
         </div>
       )}

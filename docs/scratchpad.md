@@ -51,6 +51,24 @@ src/
   - Animated components should be reusable and configurable
   - When transforming existing components, preserve all original content and functionality
   - CSS custom properties are essential for consistent theming across components
+- **Auth Pages Design (2025-09-30):**
+  - Clean white backgrounds with subtle borders work well for auth pages
+  - Maintain brand colors (primary blue and secondary orange) for consistency
+  - Use simple, centered layouts for login/signup forms
+  - Include proper validation and error messaging
+  - Loading states improve UX during async operations
+  - Link back to home page for easy navigation
+  - AuthContext integration allows for seamless authentication flow
+- **Booking Flow Redesign (2025-09-30):**
+  - Applied clean white design with border-gray-200 borders and rounded-2xl corners
+  - Enhanced progress indicator with checkmarks for completed steps
+  - Improved calendar with better spacing (gap-2) and ring indicators for today
+  - Time slots use border-2 for better visual hierarchy
+  - Problem description tags with hover states for better interactivity
+  - Success page with gradient backgrounds and icon-based instructions
+  - Consistent button styling: primary for main actions, secondary for CTAs
+  - All components use shadow-sm for subtle depth without heavy shadows
+  - **Date Formatting**: Changed from 'ar-SA' to 'ar-EG' with explicit 'gregory' calendar to display Gregorian dates instead of Hijri dates
 
 ## To-Do
 - [ ] Implement remaining pages (Services, Booking, About, Blog, Contact)

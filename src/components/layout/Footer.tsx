@@ -10,7 +10,7 @@ export default function Footer() {
           <div>
             <Link href="/" className="inline-block mb-4">
               <Image
-                src="/images/logo.svg"
+                src="/images/logo-white.svg"
                 alt="MotorLab Logo"
                 width={160}
                 height={48}
