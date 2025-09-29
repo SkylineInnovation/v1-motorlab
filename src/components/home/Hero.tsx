@@ -68,14 +68,14 @@ export default function Hero() {
                 style={{ objectFit: "cover" }}
                 priority={index === 0}
               />
-              <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-white text-center px-4">
+              <div className="absolute inset-0 bg-primary bg-opacity-70 flex flex-col items-center justify-center text-white text-center px-4">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
                   {slide.title}
                 </h1>
                 <p className="text-xl md:text-2xl mb-8">{slide.description}</p>
                 <Link
                   href="/booking"
-                  className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-medium text-lg transition-colors"
+                  className="bg-secondary hover:bg-opacity-90 text-white px-8 py-3 rounded-full font-medium text-lg transition-colors"
                 >
                   ابدأ الحجز
                 </Link>
@@ -87,7 +87,7 @@ export default function Hero() {
 
       {/* Navigation arrows */}
       <button
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-70 text-white p-2 rounded-full z-10"
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-primary bg-opacity-70 hover:bg-opacity-90 text-white p-2 rounded-full z-10"
         onClick={prevSlide}
         aria-label="Previous slide"
       >
@@ -107,7 +107,7 @@ export default function Hero() {
         </svg>
       </button>
       <button
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-70 text-white p-2 rounded-full z-10"
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-primary bg-opacity-70 hover:bg-opacity-90 text-white p-2 rounded-full z-10"
         onClick={nextSlide}
         aria-label="Next slide"
       >
@@ -135,7 +135,7 @@ export default function Hero() {
             onClick={() => goToSlide(index)}
             className={`w-3 h-3 rounded-full ${
               index === currentSlide
-                ? "bg-orange-500"
+                ? "bg-secondary"
                 : "bg-white bg-opacity-50 hover:bg-opacity-75"
             }`}
             aria-label={`Go to slide ${index + 1}`}

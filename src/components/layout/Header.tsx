@@ -12,7 +12,7 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50">
+    <header className="bg-white border-b-2 border-primary sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center">
@@ -59,41 +59,41 @@ export default function Header() {
         <nav className="hidden md:flex items-center space-x-8">
           <Link
             href="/"
-            className="text-gray-700 hover:text-orange-500 font-medium transition-colors"
+            className="text-gray-700 hover:text-primary font-medium transition-colors"
           >
             الرئيسية
           </Link>
           <Link
             href="/services"
-            className="text-gray-700 hover:text-orange-500 font-medium transition-colors"
+            className="text-gray-700 hover:text-primary font-medium transition-colors"
           >
             خدماتنا
           </Link>
           <Link
             href="/booking"
-            className="text-gray-700 hover:text-orange-500 font-medium transition-colors"
+            className="text-gray-700 hover:text-primary font-medium transition-colors"
           >
             احجز موعد
           </Link>
           <Link
             href="/about"
-            className="text-gray-700 hover:text-orange-500 font-medium transition-colors"
+            className="text-gray-700 hover:text-primary font-medium transition-colors"
           >
             من نحن
           </Link>
           <Link
             href="/blog"
-            className="text-gray-700 hover:text-orange-500 font-medium transition-colors"
+            className="text-gray-700 hover:text-primary font-medium transition-colors"
           >
             المدونة
           </Link>
           <Link
             href="/contact"
-            className="text-gray-700 hover:text-orange-500 font-medium transition-colors"
+            className="text-gray-700 hover:text-primary font-medium transition-colors"
           >
             تواصل معنا
           </Link>
-          <button className="text-gray-700 hover:text-orange-500 font-medium transition-colors">
+          <button className="text-gray-700 hover:text-primary font-medium transition-colors">
             العربية | EN
           </button>
         </nav>
@@ -101,7 +101,7 @@ export default function Header() {
         {/* Book Now Button */}
         <Link
           href="/booking"
-          className="hidden md:block bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full font-medium transition-colors"
+          className="hidden md:block bg-primary hover:bg-opacity-90 text-white px-6 py-2 rounded-full font-medium transition-colors"
         >
           احجز موعد الآن
         </Link>
@@ -112,52 +112,52 @@ export default function Header() {
             <div className="flex flex-col p-4 space-y-4 text-right">
               <Link
                 href="/"
-                className="text-gray-700 hover:text-orange-500 font-medium transition-colors"
+                className="text-gray-700 hover:text-primary font-medium transition-colors"
                 onClick={toggleMenu}
               >
                 الرئيسية
               </Link>
               <Link
                 href="/services"
-                className="text-gray-700 hover:text-orange-500 font-medium transition-colors"
+                className="text-gray-700 hover:text-primary font-medium transition-colors"
                 onClick={toggleMenu}
               >
                 خدماتنا
               </Link>
               <Link
                 href="/booking"
-                className="text-gray-700 hover:text-orange-500 font-medium transition-colors"
+                className="text-gray-700 hover:text-primary font-medium transition-colors"
                 onClick={toggleMenu}
               >
                 احجز موعد
               </Link>
               <Link
                 href="/about"
-                className="text-gray-700 hover:text-orange-500 font-medium transition-colors"
+                className="text-gray-700 hover:text-primary font-medium transition-colors"
                 onClick={toggleMenu}
               >
                 من نحن
               </Link>
               <Link
                 href="/blog"
-                className="text-gray-700 hover:text-orange-500 font-medium transition-colors"
+                className="text-gray-700 hover:text-primary font-medium transition-colors"
                 onClick={toggleMenu}
               >
                 المدونة
               </Link>
               <Link
                 href="/contact"
-                className="text-gray-700 hover:text-orange-500 font-medium transition-colors"
+                className="text-gray-700 hover:text-primary font-medium transition-colors"
                 onClick={toggleMenu}
               >
                 تواصل معنا
               </Link>
-              <button className="text-gray-700 hover:text-orange-500 font-medium transition-colors text-right">
+              <button className="text-gray-700 hover:text-primary font-medium transition-colors text-right">
                 العربية | EN
               </button>
               <Link
                 href="/booking"
-                className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full font-medium transition-colors text-center"
+                className="bg-primary hover:bg-opacity-90 text-white px-6 py-2 rounded-full font-medium transition-colors text-center"
                 onClick={toggleMenu}
               >
                 احجز موعد الآن
