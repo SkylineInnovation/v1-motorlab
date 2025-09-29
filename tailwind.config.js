@@ -12,6 +12,10 @@ module.exports = {
         DEFAULT: '0 2px 4px rgba(0, 0, 0, 0.5)',
         lg: '0 2px 10px rgba(0, 0, 0, 0.7)',
       },
+      fontFamily: {
+        sans: ['var(--font-sans)'],
+        heading: ['var(--font-heading)'],
+      },
     },
   },
   plugins: [

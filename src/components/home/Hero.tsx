@@ -104,7 +104,7 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl lg:px-8 mx-auto px-6">
         <div className="sm:pt-16 text-center max-w-4xl mr-auto ml-auto pt-12 pb-48">
           {/* Badge */}
-          <span className="inline-flex items-center gap-2 text-xs font-medium text-white/90 glass-dark border-white/20 border rounded-full mr-auto mb-6 ml-auto pt-2 pr-4 pb-2 pl-4">
+          <span className="inline-flex items-center gap-2 text-xs font-medium text-white/90 glass-dark border-white/20 border rounded-full mr-auto mb-6 ml-auto pt-2 pr-4 pb-2 pl-4" style={{ fontFamily: 'var(--font-cairo)' }}>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3">
               <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path>
               <path d="M20 2v4"></path>
@@ -115,7 +115,7 @@ export default function Hero() {
           </span>
 
           {/* Main heading */}
-          <h1 className="sm:text-5xl md:text-6xl lg:text-7xl text-3xl font-bold text-white/90 tracking-tighter mb-6 text-shadow-lg">
+          <h1 className="sm:text-5xl md:text-6xl lg:text-7xl text-3xl font-bold text-white/90 tracking-tighter mb-6 text-shadow-lg" style={{ fontFamily: 'var(--font-cairo)' }}>
             {slides[currentSlide].title.split(' ').map((word, index) => (
               <span key={index} className={index === slides[currentSlide].title.split(' ').length - 1 ? "text-secondary" : ""}>
                 {word}{' '}
