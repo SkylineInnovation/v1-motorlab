@@ -1,33 +1,37 @@
 "use client";
 
+import React from 'react';
 import { useBooking } from '@/context/BookingContext';
 import { useAuth } from '@/context/AuthContext';
-import Image from 'next/image';
+// Import React Icons
+import { FaCar, FaCogs, FaCarCrash } from 'react-icons/fa';
+import { MdCarRepair, MdOutlineDirectionsCar } from 'react-icons/md';
+import { IoSpeedometerOutline } from 'react-icons/io5';
 
 const features = [
   {
     id: 1,
     title: 'فحص شامل للسيارة',
     description: 'أكثر من 290 نقطة فحص مع تقرير معتمد',
-    icon: '/images/service-inspection.svg',
+    icon: FaCar,
   },
   {
     id: 2,
     title: 'فحص المحرك',
     description: 'تشخيص دقيق لأداء المحرك وكفاءته',
-    icon: '/images/service-engine.svg',
+    icon: FaCogs,
   },
   {
     id: 3,
     title: 'فحص الفرامل',
     description: 'اختبار كفاءة الفرامل وأنظمة السلامة',
-    icon: '/images/service-brakes.svg',
+    icon: IoSpeedometerOutline,
   },
   {
     id: 4,
     title: 'فحص الشاسيه',
     description: 'تحليل حالة الشاسيه والهيكل',
-    icon: '/images/service-chassis.svg',
+    icon: MdCarRepair,
   },
 ];
 
@@ -57,13 +61,11 @@ export default function Onboarding() {
             className="flex items-start p-4 border border-gray-200 rounded-lg hover:border-primary transition-colors"
           >
             <div className="flex-shrink-0 mr-4">
-              <div className="bg-primary bg-opacity-10 p-3 rounded-full">
-                <Image
-                  src={feature.icon}
-                  alt={feature.title}
-                  width={32}
-                  height={32}
-                />
+              <div className="bg-primary p-3 rounded-full flex items-center justify-center">
+                {React.createElement(feature.icon, {
+                  className: "w-6 h-6 text-white",
+                  'aria-hidden': true
+                })}
               </div>
             </div>
             <div>
