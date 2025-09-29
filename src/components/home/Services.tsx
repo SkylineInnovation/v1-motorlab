@@ -64,58 +64,49 @@ export default function Services() {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {services.map((service, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {services.map((service, index) => {
+            const gradients = [
+              { from: 'from-blue-600', to: 'to-purple-600', glow: 'from-blue-600/20 to-purple-600/20' },
+              { from: 'from-secondary', to: 'to-orange-600', glow: 'from-secondary/20 to-orange-600/20' },
+              { from: 'from-purple-600', to: 'to-pink-600', glow: 'from-purple-600/20 to-pink-600/20' },
+              { from: 'from-emerald-600', to: 'to-teal-600', glow: 'from-emerald-600/20 to-teal-600/20' },
+              { from: 'from-rose-600', to: 'to-orange-600', glow: 'from-rose-600/20 to-orange-600/20' },
+            ];
+            const gradient = gradients[index % gradients.length];
+            
+            return (
             <div
               key={service.id}
-              className="relative rounded-2xl border border-white/10 bg-gradient-card ring-1 ring-inset ring-white/5 overflow-hidden hover-lift group"
+              className="group relative overflow-hidden glass-dark border border-white/10 p-8 rounded-2xl hover:border-secondary/50 transition-all duration-300 hover-lift"
             >
-              {/* Card Header */}
-              <div className="flex items-center justify-between px-6 py-4 border-b border-white/10">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-white/20 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white/80">
-                      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
-                    </svg>
-                  </div>
-                  <span className="text-sm font-medium text-white/90">{service.title}</span>
+              <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${gradient.glow} rounded-full blur-3xl`}></div>
+              <div className="relative z-10">
+                {/* Icon */}
+                <div className={`w-14 h-14 bg-gradient-to-r ${gradient.from} ${gradient.to} rounded-xl flex items-center justify-center mb-6 shadow-lg`}>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
                 </div>
-                <span className="inline-flex items-center gap-1.5 text-xs font-medium text-secondary bg-secondary/10 border border-secondary/20 rounded-full px-2 py-0.5">
+                
+                {/* Title */}
+                <h3 className="text-xl font-bold mb-3 text-white" style={{ fontFamily: 'var(--font-cairo)' }}>{service.title}</h3>
+                
+                {/* Description */}
+                <p className="text-white/70 leading-relaxed mb-4">
+                  {service.description}
+                </p>
+                
+                {/* Badge */}
+                <span className="inline-flex items-center gap-1.5 text-xs font-medium text-secondary bg-secondary/10 border border-secondary/20 rounded-full px-3 py-1">
                   <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3">
                     <path d="M20 6 9 17l-5-5"></path>
                   </svg>
                   معتمد
                 </span>
               </div>
-
-              {/* Card Content */}
-              <div className="px-6 py-6 space-y-4">
-                <div className="rounded-lg bg-gray-950/40 border border-white/10 p-4">
-                  <div className="flex items-start gap-3">
-                    <div className="h-8 w-8 rounded-full bg-secondary/20 border border-secondary/30 flex items-center justify-center flex-shrink-0">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-secondary">
-                        <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path>
-                      </svg>
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-sm text-white/80 leading-relaxed">
-                        {service.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Card Footer */}
-              <div className="px-6 py-4 border-t border-white/10 flex items-center gap-2 text-xs text-white/60">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3">
-                  <path d="M12 18V5"></path>
-                  <path d="M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4"></path>
-                </svg>
-                <span>فحص دقيق ومعتمد</span>
-              </div>
             </div>
-          ))}
+          )})}
         </div>
 
         {/* Bottom Section */}
