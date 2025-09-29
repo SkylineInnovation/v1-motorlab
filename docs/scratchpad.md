@@ -44,6 +44,13 @@ src/
 - When using custom CSS with Tailwind, be careful with at-rules like `@theme` that might not be standard
 - SVG placeholders are useful for development before actual images are available
 - Component-based architecture makes it easy to organize and maintain the codebase
+- **Modern Design Implementation (2024-09-29):**
+  - Glass morphism effects work well with backdrop-filter and rgba backgrounds
+  - Fixed positioning for floating navigation requires proper z-index management
+  - Dark theme with proper contrast ratios improves readability
+  - Animated components should be reusable and configurable
+  - When transforming existing components, preserve all original content and functionality
+  - CSS custom properties are essential for consistent theming across components
 
 ## To-Do
 - [ ] Implement remaining pages (Services, Booking, About, Blog, Contact)

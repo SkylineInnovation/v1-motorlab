@@ -1,0 +1,803 @@
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NovaCode — The AI‑Native Code Editor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script src="https://cdn.tailwindcss.com"></script><meta name="disabled-font-classes" content="font-roboto,font-montserrat,font-poppins,font-playfair,font-merriweather,font-work-sans,font-pt-serif,font-space-mono,font-quicksand,font-nunito,font-instrument-serif,font-manrope,font-jakarta,font-bricolage,font-geist-mono">
+<link id="all-fonts-link-font-space-grotesk" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-space-grotesk">.font-space-grotesk { font-family: 'Space Grotesk', sans-serif !important; }</style><link id="all-fonts-link-font-geist" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist">.font-geist { font-family: 'Geist', sans-serif !important; }</style></head>
+<body class="antialiased bg-gray-950 text-white" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial;"><div class="absolute top-0 w-full -z-10 h-[800px] blur-3xl bg-cover bg-center" style="background-image: url(&quot;https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/83045da5-b59d-410d-ae30-bd8f8164ed71_3840w.jpg&quot;);"></div>
+  <!-- Navigation -->
+  <header class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-4xl px-6">
+    <div class="bg-gray-900/80 border-gray-800 border rounded-full shadow-[0_2.8px_2.2px_rgba(0,_0,_0,_0.034),_0_6.7px_5.3px_rgba(0,_0,_0,_0.048),_0_12.5px_10px_rgba(0,_0,_0,_0.06),_0_22.3px_17.9px_rgba(0,_0,_0,_0.072),_0_41.8px_33.4px_rgba(0,_0,_0,_0.086),_0_100px_80px_rgba(0,_0,_0,_0.12)] backdrop-blur-xl">
+      <div class="flex pt-3 pr-4 pb-3 pl-6 items-center justify-between">
+        <!-- Logo -->
+        <a href="#" class="inline-flex items-center justify-center bg-center mix-blend-screen w-[100px] h-[40px] bg-[url(https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/c2619d23-de07-4eff-b01a-b9f64811b0ea_320w.jpg)] bg-cover rounded-full"></a>
+
+        <nav class="hidden md:flex items-center gap-6">
+          <a href="#" class="hover:text-white/70 text-sm font-medium text-white/90 font-space-grotesk" style="">Product</a>
+          <a href="#" class="hover:text-white/70 text-sm font-medium text-white/90 font-space-grotesk" style="">Extensions</a>
+          <a href="#" class="hover:text-white/70 text-sm font-medium text-white/90 font-space-grotesk" style="">Docs</a>
+          <a href="#" class="hover:text-white/70 text-sm font-medium text-white/90 font-space-grotesk" style="">Pricing</a>
+        </nav>
+        <div class="hidden md:flex gap-3 items-center">
+          <a href="#" class="hover:text-white/60 text-sm font-medium text-white/80 font-space-grotesk" style="">Sign in</a>
+          <button type="button" class="button">
+<div class="points_wrapper">
+<i class="point"></i>
+<i class="point"></i>
+<i class="point"></i>
+<i class="point"></i>
+<i class="point"></i>
+<i class="point"></i>
+<i class="point"></i>
+<i class="point"></i>
+<i class="point"></i>
+<i class="point"></i>
+</div>
+
+<span class="inner font-space-grotesk" style="">Get Started<svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+<path d="M5 12h14" class=""></path>
+<path d="m12 5 7 7-7 7" class=""></path>
+</svg></span>
+<style>
+.button {
+cursor: pointer;
+position: relative;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+overflow: hidden;
+transition: all 0.25s ease;
+background: radial-gradient(65.28% 65.28% at 50% 100%,
+    rgba(99, 102, 241, 0.8) 0%,
+    rgba(99, 102, 241, 0) 100%),
+  linear-gradient(0deg, #4f46e5, #4f46e5);
+border-radius: 9999px;
+border: none;
+outline: none;
+padding: 8px 18px;
+min-height: 36px;
+min-width: 90px;
+}
+
+.button::before,
+.button::after {
+content: "";
+position: absolute;
+transition: all 0.5s ease-in-out;
+z-index: 0;
+}
+
+.button::before {
+inset: 1px;
+background: linear-gradient(177.95deg,
+    rgba(255, 255, 255, 0.19) 0%,
+    rgba(255, 255, 255, 0) 100%);
+border-radius: 9999px;
+}
+
+.button::after {
+inset: 2px;
+background: radial-gradient(65.28% 65.28% at 50% 100%,
+    rgba(99, 102, 241, 0.8) 0%,
+    rgba(99, 102, 241, 0) 100%),
+  linear-gradient(0deg, #4f46e5, #4f46e5);
+border-radius: 9999px;
+}
+
+.button:active {
+transform: scale(0.95);
+}
+
+.points_wrapper {
+overflow: hidden;
+width: 100%;
+height: 100%;
+pointer-events: none;
+position: absolute;
+z-index: 1;
+}
+
+.points_wrapper .point {
+bottom: -8px;
+position: absolute;
+animation: floating-points infinite ease-in-out;
+pointer-events: none;
+width: 1.5px;
+height: 1.5px;
+background-color: #fff;
+border-radius: 9999px;
+}
+
+@keyframes floating-points {
+0% {
+  transform: translateY(0);
+}
+
+85% {
+  opacity: 0;
+}
+
+100% {
+  transform: translateY(-40px);
+  opacity: 0;
+}
+}
+
+.points_wrapper .point:nth-child(1) {
+left: 10%;
+opacity: 1;
+animation-duration: 2.35s;
+animation-delay: 0.2s;
+}
+
+.points_wrapper .point:nth-child(2) {
+left: 30%;
+opacity: 0.7;
+animation-duration: 2.5s;
+animation-delay: 0.5s;
+}
+
+.points_wrapper .point:nth-child(3) {
+left: 25%;
+opacity: 0.8;
+animation-duration: 2.2s;
+animation-delay: 0.1s;
+}
+
+.points_wrapper .point:nth-child(4) {
+left: 44%;
+opacity: 0.6;
+animation-duration: 2.05s;
+}
+
+.points_wrapper .point:nth-child(5) {
+left: 50%;
+opacity: 1;
+animation-duration: 1.9s;
+}
+
+.points_wrapper .point:nth-child(6) {
+left: 75%;
+opacity: 0.5;
+animation-duration: 1.5s;
+animation-delay: 1.5s;
+}
+
+.points_wrapper .point:nth-child(7) {
+left: 88%;
+opacity: 0.9;
+animation-duration: 2.2s;
+animation-delay: 0.2s;
+}
+
+.points_wrapper .point:nth-child(8) {
+left: 58%;
+opacity: 0.8;
+animation-duration: 2.25s;
+animation-delay: 0.2s;
+}
+
+.points_wrapper .point:nth-child(9) {
+left: 98%;
+opacity: 0.6;
+animation-duration: 2.6s;
+animation-delay: 0.1s;
+}
+
+.points_wrapper .point:nth-child(10) {
+left: 65%;
+opacity: 1;
+animation-duration: 2.5s;
+animation-delay: 0.2s;
+}
+
+.inner {
+z-index: 2;
+gap: 5px;
+position: relative;
+width: 100%;
+color: white;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+font-size: 14px;
+font-weight: 500;
+line-height: 1.5;
+transition: color 0.2s ease-in-out;
+}
+
+.inner svg.icon {
+width: 16px;
+height: 16px;
+transition: transform 0.3s ease;
+stroke: white;
+fill: none;
+}
+
+.button:hover svg.icon {
+transform: translateX(2px);
+}
+
+.button:hover svg.icon path {
+animation: dash 0.8s linear forwards;
+}
+
+@keyframes dash {
+0% {
+  stroke-dasharray: 0, 20;
+  stroke-dashoffset: 0;
+}
+
+50% {
+  stroke-dasharray: 10, 10;
+  stroke-dashoffset: -5;
+}
+
+100% {
+  stroke-dasharray: 20, 0;
+  stroke-dashoffset: -10;
+}
+}
+</style>
+</button>
+        </div>
+        <button class="md:hidden inline-flex items-center justify-center rounded-lg border border-gray-800 p-2 text-white/80">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="menu" class="lucide lucide-menu w-4 h-4"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden pt-24">
+    <div class="max-w-7xl lg:px-8 mx-auto px-6">
+      <div class="sm:pt-16 text-center max-w-3xl mr-auto ml-auto pt-12 pb-48">
+        <span class="inline-flex items-center gap-2 text-xs font-medium text-white/90 bg-gray-800/50 mix-blend-screen border-gray-700 border rounded-full mr-auto mb-4 ml-auto pt-1 pr-3 pb-1 pl-3 font-space-grotesk" style="">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="sparkles" class="lucide lucide-sparkles w-3 h-3"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg>
+          New: v1.0 Preview
+        </span>
+        <h1 class="sm:text-6xl md:text-8xl text-4xl font-bold text-white/90 tracking-tighter font-space-grotesk mix-blend-hard-light drop-shadow-2xl" style="">
+          Think in code. Ship
+          <span class="font-bold text-blue-300 tracking-tighter font-space-grotesk" style="">with AI</span>.
+        </h1>
+        <p class="sm:text-lg text-base font-normal text-gray-400 mix-blend-screen mt-5 drop-shadow-2xl font-space-grotesk" style="">
+          An AI‑native code editor with inline chat, context‑aware autocomplete, and one‑click refactors—fast, private, and built for teams.
+        </p>
+
+        <div class="flex flex-col gap-3 sm:flex-row mt-8 items-center justify-center">
+          <div class="relative inline-block group rounded-full">
+            <button class="animate-[slideInBlur_0.8s_ease-out_1.2s_forwards] relative z-10 overflow-hidden transition-[transform] duration-150 ease-out active:scale-[0.98] text-white bg-neutral-900/60 mix-blend-screen border-white/20 border rounded-full pt-3 pr-6 pb-3 pl-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]" style="--x: 199.6484375px; --y: 12px; --o: 0;" onmousemove="btnMove(event)" onmouseenter="this.style.setProperty('--o','1')" onmouseleave="this.style.setProperty('--o','0')">
+              <span class="relative z-10 inline-flex items-center gap-2 font-semibold rounded-full font-space-grotesk" style="">Create a free account<svg class="h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-0.5 rounded-full" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7" class="rounded-full"></path>
+                </svg></span>
+              <span class="pointer-events-none absolute bottom-0 left-1/2 right-1/2 h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-80 transition-[left,right] duration-500 ease-out group-hover:left-0 group-hover:right-0 rounded-full"></span>
+              <span class="glow pointer-events-none absolute inset-0 -z-10 rounded-full" aria-hidden="true" style="transform: scale(0.95) translate(0px, -24px);"></span>
+            </button>
+            <span class="pointer-events-none absolute -bottom-3 left-1/2 z-0 h-6 w-44 -translate-x-1/2 opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100 rounded-full" style="background: radial-gradient(60% 100% at 50% 50%, rgba(255,255,255,.55), rgba(255,255,255,.28) 35%, transparent 70%); filter: blur(10px) saturate(120%);" aria-hidden="true"></span>
+          </div>
+          <a href="#" class="group relative overflow-hidden leading-none transition-all duration-300 text-white bg-gray-800/50 mix-blend-screen border-gray-700 border rounded-full pt-3 pr-6 pb-3 pl-6 shadow-sm backdrop-blur">
+            <span class="absolute inset-0 -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out bg-white/5"></span>
+            <span class="relative z-10 inline-flex items-center gap-2 font-space-grotesk" style="">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="play" class="lucide lucide-play w-3.5 h-3.5"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path></svg>
+              Watch demo
+            </span>
+          </a>
+        </div>
+
+        <div class="mt-8 flex flex-col items-center gap-5 sm:flex-row sm:justify-center">
+          <div class="flex -space-x-2">
+            <img class="h-9 w-9 rounded-full ring-2 ring-gray-800 object-cover" src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/1c53297b-ace1-4051-bcc7-a0979bba1b3e_320w.jpg" alt="" style="">
+            <img class="h-9 w-9 rounded-full ring-2 ring-gray-800 object-cover" src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/151ca7b9-190a-4208-ae0f-9d97393724bf_320w.jpg" alt="" style="">
+            <img class="h-9 w-9 rounded-full ring-2 ring-gray-800 object-cover" src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/a3b230be-661c-4e3a-a05b-c294a52ac5f9_320w.jpg" alt="" style="">
+          </div>
+          <div class="flex gap-2 text-sm font-medium text-gray-400 mix-blend-screen items-center font-space-grotesk" style="">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="shield-check" class="lucide lucide-shield-check w-4 h-4"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
+            Trusted by 30,000+ developers
+          </div>
+        </div>
+      </div>
+
+      <!-- Partner logos -->
+      <div class="pt-6 pr-6 pb-6 pl-6 w-full">
+  <div class="text-center">
+    <p class="uppercase text-sm font-medium text-zinc-400 tracking-wide font-space-grotesk" style="">Powering the world’s most focused product teams
+    </p>
+  </div>
+  <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-6 mt-6 justify-items-center items-center">
+
+    <a href="#" class="inline-flex items-center justify-center h-[40px] w-[150px] bg-center mix-blend-screen bg-[url(https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/b9181a49-20ab-4552-b731-976469c0154b_320w.jpg)] bg-cover rounded"></a>
+    <a href="#" class="inline-flex items-center justify-center h-[40px] w-[150px] bg-center mix-blend-screen bg-[url(https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/ca43984b-3298-41bb-871b-d113545c657c_320w.jpg)] bg-cover rounded"></a>
+    <a href="#" class="inline-flex items-center justify-center h-[40px] w-[150px] bg-center mix-blend-screen bg-[url(https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/07ee863a-59fe-4785-a806-5592f2439df2_320w.jpg)] bg-cover rounded"></a>
+    <a href="#" class="inline-flex items-center justify-center h-[40px] w-[100px] bg-center mix-blend-screen bg-[url(https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/be92aecb-6303-4bbe-9283-ba238ac8b0ee_320w.jpg)] bg-cover rounded"></a>
+    <a href="#" class="inline-flex items-center justify-center h-[40px] w-[100px] bg-center mix-blend-screen bg-[url(https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/9f9002c0-4b36-4d16-b000-15655b25b879_320w.jpg)] bg-cover rounded"></a>
+    <a href="#" class="inline-flex items-center justify-center h-[40px] w-[150px] bg-center mix-blend-screen bg-[url(https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/1040d3ec-8da2-47f6-b134-1341261ccfb9_320w.jpg)] bg-cover rounded"></a>
+  </div>
+</div>
+
+      <!-- Product Preview: Editor with AI -->
+      <div class="relative sm:mt-16 my-48">
+        <div class="relative overflow-hidden bg-gray-900/70 border border-gray-800 rounded-3xl mx-0 sm:mx-8 lg:mx-24 shadow-xl backdrop-blur-xl">
+          <div class="p-6 sm:p-10">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-gray-800 pb-6">
+              <h3 class="text-2xl text-white font-space-grotesk font-bold tracking-tighter" style="">AI built into your editor</h3>
+              <span class="inline-flex items-center gap-2 text-xs text-gray-300 bg-gray-800/50 border border-gray-700 rounded-full px-2.5 py-1 font-space-grotesk" style="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="bot" class="lucide lucide-bot w-3 h-3"><path d="M12 8V4H8"></path><rect width="16" height="12" x="4" y="8" rx="2"></rect><path d="M2 14h2"></path><path d="M20 14h2"></path><path d="M15 13v2"></path><path d="M9 13v2"></path></svg>
+                Context aware
+              </span>
+            </div>
+
+            <!-- Three feature mockups -->
+            <div class="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+              <!-- Card 1: Inline Chat -->
+              <div class="relative rounded-2xl border border-gray-800 bg-gray-900/60 ring-1 ring-inset ring-gray-700/50 overflow-hidden">
+                <div class="flex items-center justify-between px-4 py-3 border-b border-gray-800">
+                  <div class="flex items-center gap-2">
+                    <span class="text-sm font-medium text-gray-200 font-space-grotesk" style="">Inline Chat</span>
+                  </div>
+                  <span class="inline-flex items-center gap-1.5 text-xs font-medium text-blue-300 bg-blue-500/10 border border-blue-500/20 rounded-full px-2 py-0.5 font-space-grotesk" style="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="message-square" class="lucide lucide-message-square w-3 h-3"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"></path></svg>
+                    Ask code
+                  </span>
+                </div>
+                <div class="px-3 py-3 space-y-3">
+                  <div class="rounded-lg bg-gray-950/70 border border-gray-800 p-3">
+                    <pre class="text-xs text-gray-300 leading-relaxed overflow-x-auto"><code class="font-space-grotesk" style="">// Add caching for user profile
+export async function getProfile(id) {
+  const cacheKey = `profile:${id}`;
+  const cached = await kv.get(cacheKey);
+  if (cached) return cached;
+
+  const res = await fetch(`/api/profile/${id}`);
+  const data = await res.json();
+  await kv.set(cacheKey, data, { ex: 60 });
+  return data;
+}</code></pre>
+                  </div>
+                  <div class="flex items-start gap-2">
+                    <div class="h-6 w-6 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="sparkles" class="lucide lucide-sparkles w-3 h-3 text-blue-300"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg>
+                    </div>
+                    <div class="flex-1 rounded-lg bg-gray-800/50 border border-gray-700 p-2 text-xs text-gray-200 font-space-grotesk" style="">
+                      Consider using stale‑while‑revalidate to keep responses fast while updating in the background.
+                    </div>
+                  </div>
+                </div>
+                <div class="px-4 py-3 border-t border-gray-800 flex items-center gap-2 text-xs text-gray-400">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="brain" class="lucide lucide-brain w-3 h-3"><path d="M12 18V5"></path><path d="M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4"></path><path d="M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5"></path><path d="M17.997 5.125a4 4 0 0 1 2.526 5.77"></path><path d="M18 18a4 4 0 0 0 2-7.464"></path><path d="M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517"></path><path d="M6 18a4 4 0 0 1-2-7.464"></path><path d="M6.003 5.125a4 4 0 0 0-2.526 5.77"></path></svg>
+                  <span class="font-space-grotesk" style="">Understands your workspace</span>
+                </div>
+              </div>
+
+              <!-- Card 2: Smart Autocomplete -->
+              <div class="relative rounded-2xl border border-gray-800 bg-gray-900/60 ring-1 ring-inset ring-gray-700/50 overflow-hidden">
+                <div class="relative h-56">
+                  <div class="absolute inset-0 p-4">
+                    <div class="rounded-lg bg-gray-950/70 border border-gray-800 h-full overflow-hidden">
+                      <div class="px-3 py-2 border-b border-gray-800 flex items-center gap-2">
+                        <span class="h-3 w-3 rounded-full bg-red-500/70"></span>
+                        <span class="h-3 w-3 rounded-full bg-yellow-400/70"></span>
+                        <span class="h-3 w-3 rounded-full bg-green-500/70"></span>
+                        <span class="ml-2 text-xs text-gray-400 font-space-grotesk" style="">index.ts</span>
+                      </div>
+                      <div class="p-3 text-xs leading-relaxed">
+                        <pre class="text-xs text-gray-300"><code class="font-space-grotesk" style="">export function debounce</code></pre>
+                      </div>
+                      <!-- Ghost suggestion pill -->
+                      <div class="absolute right-3 bottom-3 inline-flex items-center gap-1.5 text-xs text-gray-200 bg-gray-800/50 border border-gray-700 rounded-full px-2 py-1 font-space-grotesk" style="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="zap" class="lucide lucide-zap w-3 h-3"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path></svg>
+                        Accept • Tab
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="px-4 py-3 border-t border-gray-800 flex items-center gap-2 text-xs text-gray-400">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="code" class="lucide lucide-code w-3 h-3"><path d="m16 18 6-6-6-6"></path><path d="m8 6-6 6 6 6"></path></svg>
+                  <span class="font-space-grotesk" style="">Completes patterns &amp; tests</span>
+                </div>
+              </div>
+
+              <!-- Card 3: One‑click Refactor -->
+              <div class="relative rounded-2xl border border-gray-800 bg-gray-900/60 ring-1 ring-inset ring-gray-700/50 overflow-hidden">
+                <div class="relative h-56">
+                  <img src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/eb186d9b-3e98-458c-8cf0-b94804e1e2ef_800w.jpg" alt="" class="absolute inset-0 h-full w-full object-cover opacity-20">
+                  <div class="absolute inset-0 p-4">
+                    <div class="rounded-xl bg-gray-900/70 border border-gray-800 backdrop-blur p-3 shadow-sm w-40">
+                      <div class="flex items-center gap-2 text-xs font-medium text-gray-200 font-space-grotesk" style="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="git-branch" class="lucide lucide-git-branch w-3 h-3"><line x1="6" x2="6" y1="3" y2="15"></line><circle cx="18" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><path d="M18 9a9 9 0 0 1-9 9"></path></svg>
+                        AI Refactor
+                      </div>
+                      <div class="mt-2 space-y-1.5">
+                        <div class="h-1.5 w-full rounded bg-gray-700"></div>
+                        <div class="h-1.5 w-5/6 rounded bg-gray-800"></div>
+                        <div class="h-1.5 w-2/3 rounded bg-gray-800"></div>
+                      </div>
+                      <div class="mt-3 inline-flex items-center gap-1 text-xs text-gray-200 bg-gray-800/50 border border-gray-700 rounded-md px-2 py-1 font-space-grotesk" style="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-3 h-3"><path d="M20 6 9 17l-5-5"></path></svg>
+                        Create PR
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="px-4 py-3 border-t border-gray-800 flex items-center gap-2 text-xs text-gray-400">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="git-pull-request" class="lucide lucide-git-pull-request w-3 h-3"><circle cx="18" cy="18" r="3"></circle><circle cx="6" cy="6" r="3"></circle><path d="M13 6h3a2 2 0 0 1 2 2v7"></path><line x1="6" x2="6" y1="9" y2="21"></line></svg>
+                  <span class="font-space-grotesk" style="">Applies changes with a PR</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Copy bullets -->
+            <div class="mt-8 pt-8 border-t border-gray-800 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div class="">
+                <h4 class="text-lg font-medium tracking-tight text-white font-space-grotesk" style="">Local‑first privacy</h4>
+                <p class="mt-2 text-sm text-gray-400 font-space-grotesk" style="">Runs on‑device by default with selective cloud context when you opt in.</p>
+              </div>
+              <div class="">
+                <h4 class="text-lg font-medium tracking-tight text-white font-space-grotesk" style="">Understands your stack</h4>
+                <p class="mt-2 text-sm text-gray-400 font-space-grotesk" style="">Indexes your monorepo, frameworks, and tests for precise answers.</p>
+              </div>
+              <div class="">
+                <h4 class="text-lg font-medium tracking-tight text-white font-space-grotesk" style="">Never breaks flow</h4>
+                <p class="mt-2 text-sm text-gray-400 font-space-grotesk" style="">Command palette and inline actions keep you in the editor.</p>
+              </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="mt-6 pt-6 border-t border-gray-800">
+              <a href="#" class="inline-flex items-center gap-2 text-xs font-medium text-gray-100 hover:text-gray-300 font-space-grotesk" style="">
+                Explore AI features
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" class="lucide lucide-arrow-right w-3 h-3"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Performance & Telemetry -->
+      <div class="relative z-10 mt-16">
+        <div class="grid gap-12 lg:grid-cols-2 my-48">
+          <!-- Chart card -->
+          <div class="relative rounded-[36px] pt-5 pr-5 pb-5 pl-5">
+            <article class="relative overflow-hidden bg-gray-900/70 border-gray-800 border rounded-3xl shadow-xl backdrop-blur-xl">
+              <div class="p-6 sm:p-10">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6 pb-6 border-b border-gray-800">
+                  <h3 class="text-2xl text-white font-space-grotesk font-bold tracking-tighter" style="">Blazing performance</h3>
+                  <span class="inline-flex items-center gap-2 text-xs text-gray-300 bg-gray-800/50 border border-gray-700 rounded-full px-2.5 py-1 font-space-grotesk" style="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="gauge" class="lucide lucide-gauge w-3 h-3"><path d="m12 14 4-4"></path><path d="M3.34 19a10 10 0 1 1 17.32 0"></path></svg>
+                    P95 latency
+                  </span>
+                </div>
+
+                <div class="relative rounded-2xl bg-gray-950/40 border border-gray-800 mb-8 p-4">
+                  <div class="rounded-xl bg-gray-900/90 border border-gray-800 shadow-sm p-3">
+                    <div class="relative h-48">
+                      <div class="text-sm text-gray-400 text-center py-16 font-space-grotesk" style="">Performance Chart Placeholder</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-6 border-t border-gray-800 pt-6">
+                  <div class="">
+                    <h4 class="text-lg font-medium tracking-tight text-white font-space-grotesk" style="">Sub‑30ms typing</h4>
+                    <p class="mt-2 text-sm text-gray-400 font-space-grotesk" style="">Streaming suggestions keep up with your keystrokes across large repos.</p>
+                  </div>
+                  <div>
+                    <h4 class="text-lg font-medium tracking-tight text-white font-space-grotesk" style="">Low overhead</h4>
+                    <p class="mt-2 text-sm text-gray-400 font-space-grotesk" style="">Smart scheduling ensures indexing never blocks your workflow.</p>
+                  </div>
+                </div>
+
+                <div class="mt-6 pt-6 border-t border-gray-800">
+                  <a href="#" class="inline-flex items-center gap-2 text-xs font-medium text-gray-100 hover:text-gray-300 font-space-grotesk" style="">
+                    See benchmarks
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" class="lucide lucide-arrow-right w-3 h-3"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Team collaboration -->
+          <div class="">
+            <h3 class="text-4xl sm:text-5xl text-white font-space-grotesk font-bold tracking-tighter" style="">Built for teams, secure by default</h3>
+            <div class="mt-8 border-t border-gray-800 pt-6">
+              <div class="space-y-4">
+                <div class="flex items-start gap-3 pb-4 border-b border-gray-800/50">
+                  <div class="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="users" class="lucide lucide-users w-4 h-4 text-blue-300"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                  </div>
+                  <div class="">
+                    <h5 class="font-medium text-white font-space-grotesk" style="">Live collaboration</h5>
+                    <p class="text-sm text-gray-400 mt-1 font-space-grotesk" style="">Share terminals, edit together, and chat right beside your code.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3 pb-4 border-b border-gray-800/50">
+                  <div class="w-8 h-8 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="lock" class="lucide lucide-lock w-4 h-4 text-emerald-300"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                  </div>
+                  <div class="">
+                    <h5 class="font-medium text-white font-space-grotesk" style="">Private by design</h5>
+                    <p class="text-sm text-gray-400 mt-1 font-space-grotesk" style="">Granular data controls, on‑prem options, and audit trails for compliance.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="w-8 h-8 rounded-full bg-purple-500/20 border border-purple-500/30 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="puzzle" class="lucide lucide-puzzle w-4 h-4 text-purple-300"><path d="M15.39 4.39a1 1 0 0 0 1.68-.474 2.5 2.5 0 1 1 3.014 3.015 1 1 0 0 0-.474 1.68l1.683 1.682a2.414 2.414 0 0 1 0 3.414L19.61 15.39a1 1 0 0 1-1.68-.474 2.5 2.5 0 1 0-3.014 3.015 1 1 0 0 1 .474 1.68l-1.683 1.682a2.414 2.414 0 0 1-3.414 0L8.61 19.61a1 1 0 0 0-1.68.474 2.5 2.5 0 1 1-3.014-3.015 1 1 0 0 0 .474-1.68l-1.683-1.682a2.414 2.414 0 0 1 0-3.414L4.39 8.61a1 1 0 0 1 1.68.474 2.5 2.5 0 1 0 3.014-3.015 1 1 0 0 1-.474-1.68l1.683-1.682a2.414 2.414 0 0 1 3.414 0z"></path></svg>
+                  </div>
+                  <div class="">
+                    <h5 class="font-medium text-white font-space-grotesk" style="">First‑class integrations</h5>
+                    <p class="text-sm text-gray-400 mt-1 font-space-grotesk" style="">Connect GitHub, GitLab, Jira, Slack, and your CI without leaving the editor.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-6 mt-8">
+              <div class="grid gap-6 sm:grid-cols-2 pb-6 border-b border-gray-800/50">
+                <div class="flex gap-3 items-center">
+                  <div class="flex items-baseline gap-2">
+                    <span class="text-2xl text-white font-space-grotesk font-bold tracking-tighter" style="">4.9</span>
+                    <span class="text-sm text-gray-400 font-space-grotesk" style="">/5</span>
+                  </div>
+                  <p class="text-xs text-gray-400 font-space-grotesk" style="">22k+ dev reviews</p>
+                </div>
+                <div class="flex gap-3 items-center">
+                  <div class="flex items-baseline gap-2">
+                    <span class="text-2xl text-white font-space-grotesk font-bold tracking-tighter" style="">92%</span>
+                  </div>
+                  <p class="text-xs text-gray-400 font-space-grotesk" style="">Recommend to a teammate</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-6 mt-8">
+              <button class="inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-base text-white bg-gray-800/50 hover:bg-gray-800/70 border border-gray-700 font-space-grotesk" style="">
+                Team Features
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" class="lucide lucide-arrow-right w-4 h-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pricing -->
+      <section class="sm:p-8 bg-gray-900/40 border-gray-800 border rounded-[36px] mt-16 mb-16 pt-6 pr-6 pb-6 pl-6 backdrop-blur-xl">
+        <div class="flex flex-col items-center text-center border-b border-gray-800 pb-8">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-800/50 border border-gray-700 text-gray-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="credit-card" class="lucide lucide-credit-card w-3 h-3"><rect width="20" height="14" x="2" y="5" rx="2"></rect><line x1="2" x2="22" y1="10" y2="10"></line></svg>
+            <span class="text-xs font-normal font-space-grotesk" style="">Pricing</span>
+          </div>
+          <h2 class="mt-4 text-[40px] sm:text-6xl lg:text-7xl leading-[0.95] text-white font-space-grotesk font-bold tracking-tighter" style="">Scale with confidence</h2>
+          <p class="mt-2 text-sm sm:text-base text-gray-400 font-space-grotesk" style="">Choose a plan that grows with your team and adapts to your workflow.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mt-8 mx-auto">
+          <!-- Free -->
+          <article class="relative overflow-hidden p-5 sm:p-6 bg-gray-900/50 border border-gray-800 rounded-2xl backdrop-blur-xl">
+            <div class="flex items-center justify-between text-xs text-gray-400 border-b border-gray-800/50 pb-4">
+              <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-gray-950/80 ring-1 ring-gray-700 font-space-grotesk" style="">01</span>
+              <span class="inline-flex items-center gap-1 font-space-grotesk" style="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="clock" class="lucide lucide-clock w-3 h-3"><path d="M12 6v6l4 2"></path><circle cx="12" cy="12" r="10"></circle></svg>
+                Instant setup
+              </span>
+            </div>
+            <div class="mt-5 flex items-start justify-between">
+              <div class="">
+                <h3 class="text-2xl sm:text-3xl text-white font-space-grotesk font-bold tracking-tighter" style="">Free</h3>
+                <p class="mt-1 text-sm text-gray-400 font-space-grotesk" style="">For individuals exploring the AI editor.</p>
+              </div>
+              <div class="text-right">
+                <p class="text-2xl sm:text-3xl text-white font-space-grotesk font-bold tracking-tighter" style="">$0</p>
+                <p class="text-xs text-gray-500 font-space-grotesk" style="">forever</p>
+              </div>
+            </div>
+            <button class="mt-5 inline-flex items-center justify-center gap-2 h-11 w-full rounded-full bg-white text-gray-900 text-sm font-medium hover:opacity-90 transition font-space-grotesk" style="">
+              Get Started
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right w-3.5 h-3.5"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
+            </button>
+            <ul class="mt-6 space-y-3 text-sm border-t border-gray-800/50 pt-6">
+              <li class="flex items-start gap-3 font-space-grotesk" style="">
+                <span class="mt-0.5 h-5 w-5 rounded-full bg-gray-800/50 border border-gray-700 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check text-emerald-400 w-3 h-3"><path d="M20 6 9 17l-5-5"></path></svg>
+                </span>
+                2 private projects
+              </li>
+              <li class="flex items-start gap-3 font-space-grotesk" style="">
+                <span class="mt-0.5 h-5 w-5 rounded-full bg-gray-800/50 border border-gray-700 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check text-emerald-400 w-3 h-3"><path d="M20 6 9 17l-5-5"></path></svg>
+                </span>
+                Core autocomplete + inline chat
+              </li>
+              <li class="flex items-start gap-3 font-space-grotesk" style="">
+                <span class="mt-0.5 h-5 w-5 rounded-full bg-gray-800/50 border border-gray-700 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check text-emerald-400 w-3 h-3"><path d="M20 6 9 17l-5-5"></path></svg>
+                </span>
+                Community support
+              </li>
+            </ul>
+          </article>
+
+          <!-- Pro -->
+          <article class="relative overflow-hidden p-5 sm:p-6 bg-gray-900/60 border border-gray-700 rounded-2xl shadow backdrop-blur-xl ring-1 ring-blue-500/20">
+            <div class="flex items-center justify-between text-xs text-gray-400 border-b border-gray-800/50 pb-4">
+              <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-gray-950/80 ring-1 ring-blue-500/30 font-space-grotesk" style="">02</span>
+              <span class="inline-flex items-center gap-1 font-space-grotesk" style="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="clock" class="lucide lucide-clock w-3 h-3"><path d="M12 6v6l4 2"></path><circle cx="12" cy="12" r="10"></circle></svg>
+                Setup in 5 min
+              </span>
+            </div>
+            <div class="mt-5 flex items-start justify-between">
+              <div class="">
+                <h3 class="text-2xl sm:text-3xl text-white font-space-grotesk font-bold tracking-tighter" style="">Pro</h3>
+                <p class="mt-1 text-sm text-gray-400 font-space-grotesk" style="">For professionals and growing teams.</p>
+              </div>
+              <div class="text-right">
+                <p class="text-2xl sm:text-3xl text-white font-space-grotesk font-bold tracking-tighter" style="">$12</p>
+                <p class="text-xs text-gray-500 font-space-grotesk" style="">per user / mo</p>
+              </div>
+            </div>
+            <button class="mt-5 inline-flex items-center justify-center gap-2 h-11 w-full rounded-full bg-white text-gray-900 text-sm font-medium hover:opacity-90 transition font-space-grotesk" style="">
+              Start Pro
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="zap" class="lucide lucide-zap w-3.5 h-3.5"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path></svg>
+            </button>
+            <ul class="mt-6 space-y-3 text-sm border-t border-gray-800/50 pt-6">
+              <li class="flex items-start gap-3 font-space-grotesk" style="">
+                <span class="mt-0.5 h-5 w-5 rounded-full bg-gray-800/50 border border-blue-500/30 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check text-emerald-400 w-3 h-3"><path d="M20 6 9 17l-5-5"></path></svg>
+                </span>
+                Unlimited private projects &amp; team seats
+              </li>
+              <li class="flex items-start gap-3 font-space-grotesk" style="">
+                <span class="mt-0.5 h-5 w-5 rounded-full bg-gray-800/50 border border-blue-500/30 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check text-emerald-400 w-3 h-3"><path d="M20 6 9 17l-5-5"></path></svg>
+                </span>
+                Advanced refactors &amp; code actions
+              </li>
+              <li class="flex items-start gap-3 font-space-grotesk" style="">
+                <span class="mt-0.5 h-5 w-5 rounded-full bg-gray-800/50 border border-blue-500/30 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check text-emerald-400 w-3 h-3"><path d="M20 6 9 17l-5-5"></path></svg>
+                </span>
+                Priority support
+              </li>
+            </ul>
+          </article>
+
+          <!-- Enterprise -->
+          <article class="relative overflow-hidden p-5 sm:p-6 bg-gray-900/50 border border-gray-800 rounded-2xl backdrop-blur-xl">
+            <div class="flex items-center justify-between text-xs text-gray-400 border-b border-gray-800/50 pb-4">
+              <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-gray-950/80 ring-1 ring-gray-700 font-space-grotesk" style="">03</span>
+              <span class="inline-flex items-center gap-1 font-space-grotesk" style="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="clock" class="lucide lucide-clock w-3 h-3"><path d="M12 6v6l4 2"></path><circle cx="12" cy="12" r="10"></circle></svg>
+                Custom onboarding
+              </span>
+            </div>
+            <div class="mt-5 flex items-start justify-between">
+              <div>
+                <h3 class="text-2xl sm:text-3xl text-white font-space-grotesk font-bold tracking-tighter" style="">Enterprise</h3>
+                <p class="mt-1 text-sm text-gray-400 font-space-grotesk" style="">For organizations with advanced needs.</p>
+              </div>
+              <div class="text-right">
+                <p class="text-2xl sm:text-3xl text-white font-space-grotesk font-bold tracking-tighter" style="">Custom</p>
+                <p class="text-xs text-gray-500 font-space-grotesk" style="">contact sales</p>
+              </div>
+            </div>
+            <button class="mt-5 inline-flex items-center justify-center gap-2 h-11 w-full rounded-full bg-gray-800/50 text-white text-sm font-medium hover:bg-gray-800/70 transition border border-gray-700 font-space-grotesk" style="">
+              Contact Sales
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="message-square" class="lucide lucide-message-square w-3.5 h-3.5"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"></path></svg>
+            </button>
+            <ul class="mt-6 space-y-3 text-sm border-t border-gray-800/50 pt-6">
+              <li class="flex items-start gap-3 font-space-grotesk" style="">
+                <span class="mt-0.5 h-5 w-5 rounded-full bg-gray-800/50 border border-gray-700 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check text-emerald-400 w-3 h-3"><path d="M20 6 9 17l-5-5"></path></svg>
+                </span>
+                SSO/SAML, on‑prem, and audit logs
+              </li>
+              <li class="flex items-start gap-3 font-space-grotesk" style="">
+                <span class="mt-0.5 h-5 w-5 rounded-full bg-gray-800/50 border border-gray-700 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check text-emerald-400 w-3 h-3"><path d="M20 6 9 17l-5-5"></path></svg>
+                </span>
+                Dedicated infrastructure &amp; SLA
+              </li>
+              <li class="flex items-start gap-3 font-space-grotesk" style="">
+                <span class="mt-0.5 h-5 w-5 rounded-full bg-gray-800/50 border border-gray-700 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check text-emerald-400 w-3 h-3"><path d="M20 6 9 17l-5-5"></path></svg>
+                </span>
+                24/7 support &amp; CSM
+              </li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="flex flex-col text-center mt-6 items-center border-t border-gray-800 pt-6">
+          <p class="text-xs text-gray-500 font-space-grotesk" style="">All plans include a 14‑day free trial. <a href="#" class="underline decoration-gray-700 underline-offset-4 text-gray-300 hover:text-white font-space-grotesk" style="">View detailed comparison</a>.</p>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="pt-8">
+    <div class="border-t border-gray-800">
+      <div class="mx-auto max-w-7xl px-6 py-12">
+        <div class="grid gap-12 md:grid-cols-3">
+          <div class="flex flex-col gap-6">
+            <a href="#" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+              
+              <div class="flex flex-col leading-none">
+                <span class="text-lg font-medium tracking-tight font-space-grotesk" style="">Dany</span>
+                <span class="text-sm text-gray-400 font-space-grotesk" style="">Code, Chat, Commit</span>
+              </div>
+            </a>
+
+            <div class="mt-4 flex items-center gap-3">
+              <a href="#" class="grid h-10 w-10 place-items-center rounded-xl bg-gray-800/50 ring-1 ring-gray-700 hover:bg-gray-800/70 transition" aria-label="Twitter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="twitter" class="lucide lucide-twitter text-gray-300 w-4 h-4"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+              </a>
+              <a href="#" class="grid h-10 w-10 place-items-center rounded-xl bg-gray-800/50 ring-1 ring-gray-700 hover:bg-gray-800/70 transition" aria-label="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="github" class="lucide lucide-github text-gray-300 w-4 h-4"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+              </a>
+              <a href="#" class="grid h-10 w-10 place-items-center rounded-xl bg-gray-800/50 ring-1 ring-gray-700 hover:bg-gray-800/70 transition" aria-label="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="linkedin" class="lucide lucide-linkedin text-gray-300 w-4 h-4"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </a>
+            </div>
+
+            <div class="mt-4 space-y-2 text-gray-400 border-t border-gray-800 pt-6">
+              <p class="text-sm font-space-grotesk" style="">© 2024 Dany. All rights reserved.</p>
+              <p class="text-xs text-gray-500 font-space-grotesk" style="">Made for the next generation of developers.</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-12 md:col-span-2">
+            <div class="space-y-8">
+              <div class="">
+                <h4 class="mb-4 text-sm font-medium tracking-tight font-space-grotesk" style="">Platform</h4>
+                <ul class="space-y-3 text-sm text-gray-400">
+                  <li><a class="hover:text-white transition font-space-grotesk" href="#" style="">Features</a></li>
+                  <li><a class="hover:text-white transition font-space-grotesk" href="#" style="">Extensions</a></li>
+                  <li><a class="hover:text-white transition font-space-grotesk" href="#" style="">API &amp; SDK</a></li>
+                  <li class=""><a class="hover:text-white transition font-space-grotesk" href="#" style="">Security</a></li>
+                </ul>
+              </div>
+              <div class="border-t border-gray-800 pt-8">
+                <h4 class="mb-4 text-sm font-medium tracking-tight font-space-grotesk" style="">Resources</h4>
+                <ul class="space-y-3 text-sm text-gray-400">
+                  <li><a class="hover:text-white transition font-space-grotesk" href="#" style="">Documentation</a></li>
+                  <li><a class="hover:text-white transition font-space-grotesk" href="#" style="">Tutorials</a></li>
+                  <li><a class="hover:text-white transition font-space-grotesk" href="#" style="">Blog</a></li>
+                  <li><a class="hover:text-white transition font-space-grotesk" href="#" style="">Changelog</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="space-y-8">
+              <div class="">
+                <h4 class="mb-4 text-sm font-medium tracking-tight font-space-grotesk" style="">Support</h4>
+                <ul class="space-y-3 text-sm text-gray-400">
+                  <li class=""><a class="hover:text-white transition font-space-grotesk" href="#" style="">Help Center</a></li>
+                  <li><a class="hover:text-white transition font-space-grotesk" href="#" style="">Contact Us</a></li>
+                  <li><a class="hover:text-white transition font-space-grotesk" href="#" style="">Community</a></li>
+                  <li><a class="hover:text-white transition font-space-grotesk" href="#" style="">Status</a></li>
+                </ul>
+              </div>
+              <div class="border-t border-gray-800 pt-8">
+                <h4 class="mb-4 text-sm font-medium tracking-tight font-space-grotesk" style="">Company</h4>
+                <ul class="space-y-3 text-sm text-gray-400">
+                  <li><a class="hover:text-white transition font-space-grotesk" href="#" style="">About</a></li>
+                  <li><a class="hover:text-white transition font-space-grotesk" href="#" style="">Careers</a></li>
+                  <li><a class="hover:text-white transition font-space-grotesk" href="#" style="">Privacy</a></li>
+                  <li><a class="hover:text-white transition font-space-grotesk" href="#" style="">Terms</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body></html>
