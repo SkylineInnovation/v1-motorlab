@@ -22,7 +22,21 @@ export default function ProblemDescription() {
 
   // Handle quick selection of common problems
   const handleQuickSelect = (problem: string) => {
-    setCarProblem(problem);
+    // Check if the problem is already selected
+    if (carProblem.includes(problem)) {
+      // If already in the text, don't add it again
+      return;
+    }
+    
+    // Add the problem to existing text with a separator if needed
+    const separator = carProblem.trim() ? '، ' : '';
+    const newValue = carProblem.trim() + (separator ? separator : '') + problem;
+    setCarProblem(newValue);
+  };
+  
+  // Clear the problem description
+  const handleClearDescription = () => {
+    setCarProblem('');
   };
 
   // Handle form submission
@@ -79,7 +93,7 @@ export default function ProblemDescription() {
 
         <div className="mb-8">
           <p className="text-black font-medium mb-2">أو اختر من المشاكل الشائعة:</p>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 mb-2">
             {COMMON_PROBLEMS.map((problem) => (
               <button
                 key={problem}
@@ -88,7 +102,7 @@ export default function ProblemDescription() {
                 className={`
                   py-1 px-3 rounded-full text-sm border
                   ${
-                    carProblem === problem
+                    carProblem.includes(problem)
                       ? 'bg-primary text-white border-primary'
                       : 'border-gray-300 text-black hover:border-primary'
                   }
@@ -99,6 +113,18 @@ export default function ProblemDescription() {
               </button>
             ))}
           </div>
+          {carProblem && (
+            <div className="flex justify-end">
+              <button
+                type="button"
+                onClick={handleClearDescription}
+                className="text-sm text-red-600 hover:text-red-800 transition-colors"
+                disabled={isSubmitting}
+              >
+                مسح الكل
+              </button>
+            </div>
+          )}
         </div>
 
         <div className="flex justify-between">
