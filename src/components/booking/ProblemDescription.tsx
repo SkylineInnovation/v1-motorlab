@@ -63,14 +63,14 @@ export default function ProblemDescription() {
 
       <form onSubmit={handleSubmit}>
         <div className="mb-6">
-          <label htmlFor="problem" className="block text-gray-700 mb-2">
+          <label htmlFor="problem" className="block text-black font-medium mb-2">
             صف مشكلة سيارتك بإيجاز:
           </label>
           <textarea
             id="problem"
             value={carProblem}
             onChange={(e) => setCarProblem(e.target.value)}
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-black placeholder-gray-500"
             rows={5}
             placeholder="اكتب وصفاً مختصراً للمشكلة التي تواجهها مع سيارتك..."
             disabled={isSubmitting}
@@ -78,7 +78,7 @@ export default function ProblemDescription() {
         </div>
 
         <div className="mb-8">
-          <p className="text-gray-700 mb-2">أو اختر من المشاكل الشائعة:</p>
+          <p className="text-black font-medium mb-2">أو اختر من المشاكل الشائعة:</p>
           <div className="flex flex-wrap gap-2">
             {COMMON_PROBLEMS.map((problem) => (
               <button
@@ -90,7 +90,7 @@ export default function ProblemDescription() {
                   ${
                     carProblem === problem
                       ? 'bg-primary text-white border-primary'
-                      : 'border-gray-300 hover:border-primary'
+                      : 'border-gray-300 text-black hover:border-primary'
                   }
                 `}
                 disabled={isSubmitting}
