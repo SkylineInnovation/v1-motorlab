@@ -66,7 +66,7 @@ export default function SuccessConfirmation() {
   // Handle booking another appointment
   const handleBookAnother = () => {
     resetBookingForm();
-    router.push('/');
+    router.push('/booking');
   };
 
   if (!booking) {

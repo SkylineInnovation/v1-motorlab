@@ -123,7 +123,7 @@ export function BookingProvider({ children }: { children: ReactNode }) {
     setSelectedDate(null);
     setSelectedTime('');
     setCarProblem('');
-    setCurrentStep('login');
+    setCurrentStep('onboarding');
     setLastCreatedBookingId(null);
   };
 
