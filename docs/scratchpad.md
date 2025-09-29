@@ -59,6 +59,15 @@ src/
   - Loading states improve UX during async operations
   - Link back to home page for easy navigation
   - AuthContext integration allows for seamless authentication flow
+- **Booking Flow Redesign (2025-09-30):**
+  - Applied clean white design with border-gray-200 borders and rounded-2xl corners
+  - Enhanced progress indicator with checkmarks for completed steps
+  - Improved calendar with better spacing (gap-2) and ring indicators for today
+  - Time slots use border-2 for better visual hierarchy
+  - Problem description tags with hover states for better interactivity
+  - Success page with gradient backgrounds and icon-based instructions
+  - Consistent button styling: primary for main actions, secondary for CTAs
+  - All components use shadow-sm for subtle depth without heavy shadows
 
 ## To-Do
 - [ ] Implement remaining pages (Services, Booking, About, Blog, Contact)

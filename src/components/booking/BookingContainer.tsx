@@ -62,31 +62,39 @@ export default function BookingContainer() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-12">
       <div className="max-w-4xl mx-auto">
         {/* Progress indicator */}
         {currentStep !== 'login' && currentStep !== 'signup' && currentStep !== 'success' && (
-          <div className="mb-8">
-            <div className="flex justify-between items-center">
-              <div className={`flex flex-col items-center ${currentStep === 'onboarding' ? 'text-primary' : 'text-gray-400'}`}>
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center ${currentStep === 'onboarding' ? 'bg-primary text-white' : 'bg-gray-200'}`}>
-                  1
+          <div className="mb-10">
+            <div className="flex justify-between items-center max-w-2xl mx-auto">
+              <div className={`flex flex-col items-center ${currentStep === 'onboarding' ? 'text-primary' : isLaterStep(currentStep) || currentStep === 'calendar' || currentStep === 'description' ? 'text-primary' : 'text-gray-400'}`}>
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center font-medium border-2 transition-all ${currentStep === 'onboarding' ? 'bg-primary text-white border-primary' : isLaterStep(currentStep) || currentStep === 'calendar' || currentStep === 'description' ? 'bg-primary text-white border-primary' : 'bg-white text-gray-400 border-gray-300'}`}>
+                  {isLaterStep(currentStep) || currentStep === 'calendar' || currentStep === 'description' ? (
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  ) : '1'}
                 </div>
-                <span className="text-sm mt-1">المعلومات</span>
+                <span className="text-xs mt-2 font-medium">المعلومات</span>
               </div>
-              <div className={`flex-1 h-1 mx-2 ${currentStep === 'onboarding' ? 'bg-gray-200' : 'bg-primary'}`}></div>
-              <div className={`flex flex-col items-center ${currentStep === 'calendar' ? 'text-primary' : 'text-gray-400'}`}>
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center ${currentStep === 'calendar' ? 'bg-primary text-white' : isLaterStep(currentStep) ? 'bg-primary text-white' : 'bg-gray-200'}`}>
-                  2
+              <div className={`flex-1 h-0.5 mx-4 ${currentStep === 'onboarding' ? 'bg-gray-300' : 'bg-primary'}`}></div>
+              <div className={`flex flex-col items-center ${currentStep === 'calendar' ? 'text-primary' : isLaterStep(currentStep) ? 'text-primary' : 'text-gray-400'}`}>
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center font-medium border-2 transition-all ${currentStep === 'calendar' ? 'bg-primary text-white border-primary' : isLaterStep(currentStep) ? 'bg-primary text-white border-primary' : 'bg-white text-gray-400 border-gray-300'}`}>
+                  {isLaterStep(currentStep) ? (
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  ) : '2'}
                 </div>
-                <span className="text-sm mt-1">الموعد</span>
+                <span className="text-xs mt-2 font-medium">الموعد</span>
               </div>
-              <div className={`flex-1 h-1 mx-2 ${isLaterStep(currentStep) ? 'bg-primary' : 'bg-gray-200'}`}></div>
+              <div className={`flex-1 h-0.5 mx-4 ${isLaterStep(currentStep) ? 'bg-primary' : 'bg-gray-300'}`}></div>
               <div className={`flex flex-col items-center ${currentStep === 'description' ? 'text-primary' : 'text-gray-400'}`}>
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center ${isCompletedStep(currentStep) ? 'bg-primary text-white' : 'bg-gray-200'}`}>
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center font-medium border-2 transition-all ${isCompletedStep(currentStep) ? 'bg-primary text-white border-primary' : 'bg-white text-gray-400 border-gray-300'}`}>
                   3
                 </div>
-                <span className="text-sm mt-1">التفاصيل</span>
+                <span className="text-xs mt-2 font-medium">التفاصيل</span>
               </div>
             </div>
           </div>

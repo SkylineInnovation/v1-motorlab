@@ -17,30 +17,29 @@ export default function BookingPage() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm py-4">
-        <div className="container mx-auto px-4">
+    <main className="min-h-screen bg-white">
+      {/* Simple Header */}
+      <header className="border-b border-gray-200 py-4 bg-white">
+        <div className="container mx-auto px-4 max-w-6xl">
           <div className="flex justify-between items-center">
-            <div className="flex items-center">
-              <Link href="/" className="flex items-center">
-                <Image
-                  src="/images/logo.svg"
-                  alt="MotorLab Logo"
-                  width={160}
-                  height={48}
-                  priority
-                />
-              </Link>
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/images/logo.svg"
+                alt="MotorLab Logo"
+                width={140}
+                height={40}
+                priority
+              />
+            </Link>
+            <nav className="flex items-center gap-6">
               {/* User greeting - Only shown when authenticated */}
               {mounted && isAuthenticated && (
-                <span className="text-primary font-medium mr-4 hidden sm:inline-block">
+                <span className="text-gray-700 font-medium hidden sm:inline-block">
                   مرحباً {user?.name}
                 </span>
               )}
-            </div>
-            <nav className="flex items-center space-x-6">
-              <Link href="/" className="text-gray-600 hover:text-primary transition-colors ml-6">
+              
+              <Link href="/" className="text-gray-600 hover:text-primary transition-colors text-sm">
                 الرئيسية
               </Link>
               
@@ -48,10 +47,10 @@ export default function BookingPage() {
               {mounted && isAuthenticated && (
                 <button 
                   onClick={logout}
-                  className="text-red-600 hover:text-red-800 font-medium transition-colors flex items-center"
+                  className="text-gray-600 hover:text-red-600 font-medium transition-colors flex items-center gap-1 text-sm"
                 >
-                  <span className="ml-1">تسجيل الخروج</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <span>تسجيل الخروج</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                   </svg>
                 </button>
@@ -64,8 +63,8 @@ export default function BookingPage() {
       {/* Booking container */}
       <BookingContainer />
 
-      {/* Footer */}
-      <footer className="bg-white border-t py-6 mt-12">
+      {/* Simple Footer */}
+      <footer className="border-t border-gray-200 py-6 mt-12 bg-white">
         <div className="container mx-auto px-4 text-center text-sm text-gray-500">
           جميع الحقوق محفوظة &copy; {new Date().getFullYear()} MotorLab
         </div>
