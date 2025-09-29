@@ -115,7 +115,7 @@ export default function Hero() {
           </span>
 
           {/* Main heading */}
-          <h1 className="sm:text-6xl md:text-7xl lg:text-8xl text-4xl font-bold text-white/90 tracking-tighter mb-6 text-shadow-lg">
+          <h1 className="sm:text-5xl md:text-6xl lg:text-7xl text-3xl font-bold text-white/90 tracking-tighter mb-6 text-shadow-lg">
             {slides[currentSlide].title.split(' ').map((word, index) => (
               <span key={index} className={index === slides[currentSlide].title.split(' ').length - 1 ? "text-secondary" : ""}>
                 {word}{' '}
