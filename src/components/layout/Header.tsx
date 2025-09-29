@@ -20,16 +20,16 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-6xl px-6">
+    <header className="fixed top-3 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-6xl px-6">
       <div className="glass-dark rounded-full shadow-2xl backdrop-blur-xl border border-white/10">
-        <div className="flex pt-3 pr-6 pb-3 pl-6 items-center justify-between">
+        <div className="flex pt-2 pr-6 pb-2 pl-6 items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
             src="/images/logo.svg"
             alt="MotorLab Logo"
-            width={160}
-            height={48}
+            width={140}
+            height={42}
             priority
           />
         </Link>
@@ -65,7 +65,7 @@ export default function Header() {
           </button>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-4">
             <Link
               href="/"
               className="text-white/90 hover:text-white text-sm font-medium transition-colors"
@@ -129,7 +129,7 @@ export default function Header() {
                 </span>
                 <Link
                   href="/booking"
-                  className="bg-secondary hover:bg-opacity-90 text-white px-4 py-2 rounded-full text-sm font-medium transition-colors"
+                  className="bg-secondary hover:bg-opacity-90 text-white px-3 py-1.5 rounded-full text-xs font-medium transition-colors"
                 >
                   احجز موعد الآن
                 </Link>
@@ -137,7 +137,7 @@ export default function Header() {
             ) : (
               <Link
                 href="/booking"
-                className="bg-secondary hover:bg-opacity-90 text-white px-4 py-2 rounded-full text-sm font-medium transition-colors"
+                className="bg-secondary hover:bg-opacity-90 text-white px-3 py-1.5 rounded-full text-xs font-medium transition-colors"
               >
                 احجز موعد الآن
               </Link>
