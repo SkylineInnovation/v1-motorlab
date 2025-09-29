@@ -105,7 +105,7 @@ export default function Hero() {
                   href="/booking"
                   className="bg-secondary hover:bg-opacity-90 text-white px-8 py-3 rounded-full font-medium text-lg transition-colors"
                 >
-                  ابدأ الحجز
+                  احجز موعد الآن
                 </Link>
               </div>
             </div>
