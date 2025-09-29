@@ -51,6 +51,14 @@ src/
   - Animated components should be reusable and configurable
   - When transforming existing components, preserve all original content and functionality
   - CSS custom properties are essential for consistent theming across components
+- **Auth Pages Design (2025-09-30):**
+  - Clean white backgrounds with subtle borders work well for auth pages
+  - Maintain brand colors (primary blue and secondary orange) for consistency
+  - Use simple, centered layouts for login/signup forms
+  - Include proper validation and error messaging
+  - Loading states improve UX during async operations
+  - Link back to home page for easy navigation
+  - AuthContext integration allows for seamless authentication flow
 
 ## To-Do
 - [ ] Implement remaining pages (Services, Booking, About, Blog, Contact)
