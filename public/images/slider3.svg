@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600">
+  <rect width="1200" height="600" fill="#e74c3c"/>
+  <text x="600" y="300" font-family="Arial, sans-serif" font-size="48" text-anchor="middle" fill="#ffffff">Vehicle Inspection Process</text>
+  <rect x="300" y="350" width="600" height="150" rx="10" fill="#c0392b"/>
+  <text x="600" y="440" font-family="Arial, sans-serif" font-size="32" text-anchor="middle" fill="#ffffff">290+ Inspection Points</text>
+</svg>
