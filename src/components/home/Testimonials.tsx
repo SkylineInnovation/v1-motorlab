@@ -58,11 +58,14 @@ export default function Testimonials() {
   );
 
   return (
-    <section className="py-16 bg-gray-50" id="testimonials">
+    <section className="py-20 bg-gradient-to-b from-gray-950 to-gray-900" id="testimonials">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">آراء العملاء</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <span className="inline-block text-secondary text-sm font-semibold tracking-wider uppercase mb-4">التقييمات</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white" style={{ fontFamily: 'var(--font-cairo)' }}>آراء العملاء</h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-8"></div>
+          <p className="text-white/70 max-w-2xl mx-auto text-lg">
             نفتخر بثقة عملائنا ونسعى دائماً لتقديم أفضل خدمة ممكنة
           </p>
         </div>
@@ -70,7 +73,7 @@ export default function Testimonials() {
         <div className="relative">
           {/* Navigation arrows for larger screens */}
           <button
-            className="absolute left-0 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-md z-10 hidden md:block"
+            className="absolute left-0 top-1/2 -translate-y-1/2 glass-dark border border-white/10 p-3 rounded-full shadow-lg z-10 hidden md:block hover:border-secondary/50 transition-all hover-lift"
             onClick={showPrevTestimonials}
             aria-label="Previous testimonials"
           >
@@ -80,7 +83,7 @@ export default function Testimonials() {
               viewBox="0 0 24 24"
               strokeWidth={2}
               stroke="currentColor"
-              className="w-6 h-6 text-gray-700"
+              className="w-6 h-6 text-white"
             >
               <path
                 strokeLinecap="round"
@@ -90,19 +93,21 @@ export default function Testimonials() {
             </svg>
           </button>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {currentTestimonials.map((testimonial) => (
               <div
                 key={testimonial.id}
-                className="bg-white p-6 rounded-lg shadow-md"
+                className="group relative overflow-hidden glass-dark border border-white/10 p-8 rounded-2xl hover:border-secondary/50 transition-all duration-300 hover-lift"
               >
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-secondary bg-opacity-20 rounded-full flex items-center justify-center text-secondary font-bold text-xl">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-secondary/10 to-purple-600/10 rounded-full blur-3xl"></div>
+                <div className="relative z-10">
+                <div className="flex items-center mb-6">
+                  <div className="w-14 h-14 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
                     {testimonial.name.charAt(0)}
                   </div>
                   <div className="ml-4">
-                    <h3 className="font-bold">{testimonial.name}</h3>
-                    <div className="flex text-secondary">
+                    <h3 className="font-bold text-white text-lg">{testimonial.name}</h3>
+                    <div className="flex text-secondary mt-1">
                       {[...Array(5)].map((_, i) => (
                         <svg
                           key={i}
@@ -123,13 +128,14 @@ export default function Testimonials() {
                     </div>
                   </div>
                 </div>
-                <p className="text-gray-700">{testimonial.text}</p>
+                <p className="text-white/70 leading-relaxed">{testimonial.text}</p>
+                </div>
               </div>
             ))}
           </div>
 
           <button
-            className="absolute right-0 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-md z-10 hidden md:block"
+            className="absolute right-0 top-1/2 -translate-y-1/2 glass-dark border border-white/10 p-3 rounded-full shadow-lg z-10 hidden md:block hover:border-secondary/50 transition-all hover-lift"
             onClick={showNextTestimonials}
             aria-label="Next testimonials"
           >
@@ -139,7 +145,7 @@ export default function Testimonials() {
               viewBox="0 0 24 24"
               strokeWidth={2}
               stroke="currentColor"
-              className="w-6 h-6 text-gray-700"
+              className="w-6 h-6 text-white"
             >
               <path
                 strokeLinecap="round"
@@ -151,9 +157,9 @@ export default function Testimonials() {
         </div>
 
         {/* Mobile navigation */}
-        <div className="flex justify-center mt-6 md:hidden">
+        <div className="flex justify-center mt-8 md:hidden gap-4">
           <button
-            className="mx-2 bg-white p-2 rounded-full shadow-md"
+            className="glass-dark border border-white/10 p-3 rounded-full shadow-lg hover:border-secondary/50 transition-all"
             onClick={showPrevTestimonials}
             aria-label="Previous testimonials"
           >
@@ -163,7 +169,7 @@ export default function Testimonials() {
               viewBox="0 0 24 24"
               strokeWidth={2}
               stroke="currentColor"
-              className="w-6 h-6 text-gray-700"
+              className="w-6 h-6 text-white"
             >
               <path
                 strokeLinecap="round"
@@ -173,7 +179,7 @@ export default function Testimonials() {
             </svg>
           </button>
           <button
-            className="mx-2 bg-white p-2 rounded-full shadow-md"
+            className="glass-dark border border-white/10 p-3 rounded-full shadow-lg hover:border-secondary/50 transition-all"
             onClick={showNextTestimonials}
             aria-label="Next testimonials"
           >
@@ -183,7 +189,7 @@ export default function Testimonials() {
               viewBox="0 0 24 24"
               strokeWidth={2}
               stroke="currentColor"
-              className="w-6 h-6 text-gray-700"
+              className="w-6 h-6 text-white"
             >
               <path
                 strokeLinecap="round"
@@ -195,17 +201,17 @@ export default function Testimonials() {
         </div>
 
         {/* Dots navigation */}
-        <div className="flex justify-center mt-6">
+        <div className="flex justify-center mt-8">
           {Array.from({
             length: Math.ceil(testimonials.length / 3),
           }).map((_, index) => (
             <button
               key={index}
               onClick={() => setActiveIndex(index * 3)}
-              className={`w-3 h-3 mx-1 rounded-full ${
+              className={`w-3 h-3 mx-1.5 rounded-full transition-all duration-300 ${
                 Math.floor(activeIndex / 3) === index
-                  ? "bg-secondary"
-                  : "bg-gray-300"
+                  ? "bg-secondary w-8"
+                  : "bg-white/30 hover:bg-white/50"
               }`}
               aria-label={`Go to testimonial group ${index + 1}`}
             />
