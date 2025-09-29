@@ -148,7 +148,7 @@ export default function BookingCalendar() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
             </svg>
           </button>
-          <h3 className="text-lg font-medium">{formatMonthName(currentMonth)}</h3>
+          <h3 className="text-lg font-medium text-black">{formatMonthName(currentMonth)}</h3>
           <button
             onClick={nextMonth}
             className="p-2 rounded-full hover:bg-gray-100"
@@ -163,7 +163,7 @@ export default function BookingCalendar() {
         <div className="grid grid-cols-7 gap-1">
           {/* Days of week headers */}
           {daysOfWeek.map((day) => (
-            <div key={day} className="text-center text-sm text-gray-500 py-2">
+            <div key={day} className="text-center text-sm text-black font-medium py-2">
               {day}
             </div>
           ))}
@@ -176,7 +176,7 @@ export default function BookingCalendar() {
               disabled={!day.isSelectable}
               className={`
                 py-2 rounded-md text-center
-                ${!day.isCurrentMonth ? 'text-gray-300' : ''}
+                ${!day.isCurrentMonth ? 'text-gray-300' : 'text-black'}
                 ${day.isToday ? 'border border-primary' : ''}
                 ${
                   selectedDate && isSameDay(day.date, selectedDate)
@@ -194,7 +194,7 @@ export default function BookingCalendar() {
       </div>
 
       <div className="mb-6">
-        <h3 className="font-medium mb-3">اختر الوقت المناسب:</h3>
+        <h3 className="font-medium mb-3 text-black">اختر الوقت المناسب:</h3>
         <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-2">
           {TIME_SLOTS.map((time) => (
             <button
@@ -205,7 +205,7 @@ export default function BookingCalendar() {
                 ${
                   selectedTime === time
                     ? 'bg-secondary text-white border-secondary'
-                    : 'hover:border-primary'
+                    : 'text-black hover:border-primary'
                 }
               `}
             >
