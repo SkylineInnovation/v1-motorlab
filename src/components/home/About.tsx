@@ -17,19 +17,19 @@ export default function About() {
 
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-xl font-bold mb-2 text-orange-500">رؤيتنا</h3>
+              <h3 className="text-xl font-bold mb-2 text-secondary">رؤيتنا</h3>
               <p className="text-gray-700">
                 أن نكون الخيار الأول لكل من يبحث عن الثقة والشفافية في فحص المركبات، وأن نساهم في رفع مستوى السلامة على الطرق من خلال خدمات دقيقة ومعتمدة تواكب التطورات العالمية في هذا المجال.
               </p>
             </div>
             <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-xl font-bold mb-2 text-orange-500">رسالتنا</h3>
+              <h3 className="text-xl font-bold mb-2 text-secondary">رسالتنا</h3>
               <p className="text-gray-700">
                 تقديم خدمات فحص مركبات متميزة بأعلى معايير الجودة والدقة، مع التركيز على الشفافية والمصداقية في كل تقرير نقدمه، لنكون شريكاً موثوقاً في قرارات عملائنا المتعلقة بمركباتهم.
               </p>
             </div>
             <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-xl font-bold mb-2 text-orange-500">قيمنا</h3>
+              <h3 className="text-xl font-bold mb-2 text-secondary">قيمنا</h3>
               <p className="text-gray-700">
                 الدقة، الشفافية، المصداقية، التميز، الاحترافية، والالتزام بأعلى معايير الجودة في كل ما نقدمه من خدمات لعملائنا.
               </p>
@@ -39,7 +39,7 @@ export default function About() {
           <div className="mt-10">
             <Link
               href="/about"
-              className="inline-block bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-medium transition-colors"
+              className="inline-block bg-primary hover:bg-opacity-90 text-white px-6 py-3 rounded-full font-medium transition-colors"
             >
               تعرف علينا أكثر
             </Link>

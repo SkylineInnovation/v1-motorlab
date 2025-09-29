@@ -70,7 +70,7 @@ export default function Services() {
                 <p className="text-gray-600 mb-4">{service.description}</p>
                 <Link
                   href={service.link}
-                  className="text-orange-500 hover:text-orange-600 font-medium inline-flex items-center"
+                  className="text-secondary hover:text-primary font-medium inline-flex items-center"
                 >
                   <span>المزيد من التفاصيل</span>
                   <svg
@@ -96,7 +96,7 @@ export default function Services() {
         <div className="text-center mt-12">
           <Link
             href="/services"
-            className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-medium transition-colors inline-block"
+            className="bg-primary hover:bg-opacity-90 text-white px-6 py-3 rounded-full font-medium transition-colors inline-block"
           >
             عرض جميع الخدمات
           </Link>
