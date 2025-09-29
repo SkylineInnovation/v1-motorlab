@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# AI-Native Code Editor Template
+docs/AI-Native Code Editor Landing Page Template.html

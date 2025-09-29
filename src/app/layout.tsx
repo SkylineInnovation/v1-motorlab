@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { El_Messiri } from "next/font/google";
 import "./globals.css";
+import { AuthProvider } from "../context/AuthContext";
+import { BookingProvider } from "../context/BookingContext";
 
 const elMessiri = El_Messiri({
   subsets: ["arabic"],
@@ -24,7 +26,11 @@ export default function RootLayout({
         className={`${elMessiri.variable} font-sans antialiased`}
         suppressHydrationWarning
       >
-        {children}
+        <AuthProvider>
+          <BookingProvider>
+            {children}
+          </BookingProvider>
+        </AuthProvider>
       </body>
     </html>
   );
