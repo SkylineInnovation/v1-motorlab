@@ -72,7 +72,7 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative overflow-hidden pt-24 min-h-screen">
+    <section className="relative overflow-hidden pt-24 min-h-screen flex items-center">
       {/* Background Slider with Images */}
       <div className="absolute inset-0 z-0">
         {slides.map((slide, index) => (
@@ -101,8 +101,8 @@ export default function Hero() {
       </div>
       
       {/* Main content */}
-      <div className="relative z-10 max-w-7xl lg:px-8 mx-auto px-6">
-        <div className="sm:pt-14 text-center max-w-4xl mr-auto ml-auto pt-10 pb-40">
+      <div className="relative z-10 max-w-7xl lg:px-8 mx-auto px-6 w-full">
+        <div className="text-center max-w-4xl mr-auto ml-auto py-20">
           {/* Badge */}
           <span className="inline-flex items-center gap-1.5 text-xs font-medium text-white/90 glass-dark border-white/20 border rounded-full mr-auto mb-5 ml-auto pt-1.5 pr-3 pb-1.5 pl-3" style={{ fontFamily: 'var(--font-cairo)' }}>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3">
