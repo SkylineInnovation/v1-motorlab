@@ -20,7 +20,7 @@ MotorLab is a modern, responsive website for a vehicle inspection center, built 
 - **Framework**: [Next.js](https://nextjs.org/) (App Router)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 - **Icons**: [Heroicons](https://heroicons.com/)
-- **Font**: [Noto Sans Arabic](https://fonts.google.com/noto/specimen/Noto+Sans+Arabic)
+- **Font**: [El Messiri](https://fonts.google.com/specimen/El+Messiri)
 - **Type Safety**: [TypeScript](https://www.typescriptlang.org/)
 
 ## 📁 Project Structure
